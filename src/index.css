@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-mono: "Space Mono", monospace;
+  --color-neon-green: #00ff41;
+  --color-dark-bg: #0d1117;
+  --color-matrix-dark: #001100;
+}
+
+/* Global Reset */
+body {
+  margin: 0;
+  padding: 0;
+  cursor: none;
+  background-color: #f3f4f6;
+  font-family: var(--font-mono); /* Force the hacker font everywhere */
+  overflow-x: hidden; /* Critical to prevent scrollbar bugs */
+}
+
+a, button {
+  cursor: none; 
+}
+
+* {
+  cursor: none !important;
+}
+
+/* Custom Scrollbar (Optional but cool) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #000;
+}
+::-webkit-scrollbar-thumb {
+  background: #00ff41;
+  border: 2px solid black;
+}
+
+
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); } 
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content; 
+  animation: marquee 15s linear infinite;
+}
+
