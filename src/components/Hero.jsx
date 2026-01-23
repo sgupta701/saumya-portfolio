@@ -60,7 +60,7 @@ const Hero = () => {
             </div>
             
             <p className="text-sm leading-relaxed text-gray-700 font-medium pr-4">
-              "Just a curious developer who loves building things. I combine logic with creativity to create AI models that learn and systems that actually help people."
+              "Just a curious developer who loves building things. I enjoy creating AI models that learn and systems that actually help people."
             </p>
           </div>
 
