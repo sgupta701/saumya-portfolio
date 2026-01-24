@@ -1,3 +1,5 @@
+/*src/App.jsx*/
+
 import React from 'react';
 import Preloader from './components/Preloader';
 import Hero from './components/Hero';
@@ -20,3 +22,4 @@ function App() {
 }
 
 export default App;
+
