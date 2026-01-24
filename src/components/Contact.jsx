@@ -5,8 +5,7 @@ import React from 'react';
 const Contact = () => {
   return (
     <div className="h-screen w-full flex flex-col justify-center items-center bg-black text-white relative overflow-hidden">
-      
-      {/* Decorative Grid Background */}
+    
       <div className="absolute inset-0 opacity-20" 
            style={{backgroundImage: 'linear-gradient(#333 1px, transparent 1px), linear-gradient(90deg, #333 1px, transparent 1px)', backgroundSize: '40px 40px'}}>
       </div>

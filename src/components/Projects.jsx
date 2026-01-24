@@ -34,16 +34,15 @@ const Projects = () => {
 
   return (
     <div className="overflow-hidden font-mono text-black bg-white">
-      {/* TRIGGER DIV */}
+
       <div ref={triggerRef}>
         
-        {/* MOVING CONTAINER */}
         <div ref={sectionRef} className="h-screen w-[300vw] flex flex-row relative">
+
+              {/* scr 1 */}
           
-          {/* ---------------- SCREEN 1: INTRO (Exact Replica) ---------------- */}
           <div className="w-screen h-full flex flex-col justify-center bg-white border-r-2 border-black relative px-12 md:px-24">
             
-            {/* MAIN HEADING */}
             <div className="mb-12">
               <h2 className="text-6xl md:text-8xl font-medium leading-tight">
                 HELLO, <br />
@@ -51,19 +50,17 @@ const Projects = () => {
               </h2>
             </div>
 
-            {/* SUMMARY SECTION */}
             <div className="max-w-3xl mb-16">
               <p className="text-xl md:text-2xl font-medium leading-relaxed uppercase">
                 A DEDICATED CSE STUDENT AND FULL STACK DEVELOPER WITH A PASSION FOR BUILDING SCALABLE AI SYSTEMS AND INTUITIVE DIGITAL EXPERIENCES.
               </p>
             </div>
 
-            {/* BOTTOM CALL TO ACTION (Absolute positioning to stick to bottom) */}
             <div className="absolute bottom-20 left-12 md:left-24 right-12 flex items-center border-t border-black pt-6 w-[85%]">
               <span className="text-sm md:text-base font-bold uppercase tracking-wide mr-4">
                 LET'S CODE-DIVE! EXPLORE SELECTED PROJECTS.
               </span>
-              {/* Long Arrow */}
+
               <div className="flex-grow h-[1px] bg-black relative">
                 <span className="absolute right-0 top-1/2 -translate-y-1/2 text-xl">
                   &rarr;
@@ -73,10 +70,10 @@ const Projects = () => {
 
           </div>
 
-          {/* ---------------- SCREEN 2: NEURA PROJECT ---------------- */}
+          {/* scr 2 */}
           <div className="w-screen h-full flex justify-center items-center bg-black text-white border-r-2 border-black relative p-10">
             <div className="max-w-5xl w-full border border-neon-green p-10 relative">
-              {/* Decorative Corner */}
+
               <div className="absolute top-0 left-0 w-4 h-4 bg-neon-green"></div>
               <div className="absolute bottom-0 right-0 w-4 h-4 bg-neon-green"></div>
 
@@ -105,11 +102,11 @@ const Projects = () => {
                 </div>
               </div>
             </div>
-            {/* Background Number */}
+
             <span className="absolute bottom-0 right-0 text-[15rem] font-black text-gray-900 opacity-50 leading-none pointer-events-none -z-10">01</span>
           </div>
 
-          {/* ---------------- SCREEN 3: ARCLENS PROJECT ---------------- */}
+          {/* screeen 3 */}
           <div className="w-screen h-full flex justify-center items-center bg-white text-black border-r-2 border-black p-10 relative">
              <div className="max-w-5xl w-full border-2 border-black p-10 bg-gray-50 shadow-[20px_20px_0px_0px_rgba(0,0,0,1)]">
               
@@ -135,7 +132,7 @@ const Projects = () => {
                 </div>
               </div>
             </div>
-             {/* Background Number */}
+
             <span className="absolute bottom-0 right-0 text-[15rem] font-black text-gray-100 leading-none pointer-events-none -z-10">02</span>
           </div>
 

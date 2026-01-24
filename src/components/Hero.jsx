@@ -165,13 +165,15 @@ const Hero = () => {
               </div>
 
               <div ref={photoRef} className="w-full md:w-[25%] h-[61vh] relative group">
-                <div className="absolute inset-0 border-2 border-black translate-x-4 translate-y-4 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
-                <img 
-                  src={profileImg} 
-                  alt="Saumya Gupta" 
-                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 hover:scale-110 border-2 border-black" 
-                />
-              </div>
+  
+              <div className="absolute inset-0 border-2 border-black bg-black translate-x-4 translate-y-4 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
+              
+              <img 
+                src={profileImg} 
+                alt="Saumya Gupta" 
+                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 hover:scale-110 border-2 border-black" 
+              />
+            </div>
             </div>
 
             <div className="h-[6vh] border-t-2 border-black flex items-center px-10 justify-between text-xs font-bold uppercase tracking-widest bg-white">

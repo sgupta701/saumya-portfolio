@@ -8,14 +8,13 @@
   --color-matrix-dark: #001100;
 }
 
-/* Global Reset */
 body {
   margin: 0;
   padding: 0;
   cursor: none;
   background-color: #f3f4f6;
-  font-family: var(--font-mono); /* Force the hacker font everywhere */
-  overflow-x: hidden; /* Critical to prevent scrollbar bugs */
+  font-family: var(--font-mono); 
+  overflow-x: hidden; 
 }
 
 a, button {
@@ -26,7 +25,6 @@ a, button {
   cursor: none !important;
 }
 
-/* Custom Scrollbar (Optional but cool) */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -51,8 +49,6 @@ a, button {
 }
 
 
-
-/* Vertical Marquee */
 @keyframes marquee-vertical {
   from { transform: translateY(0); }
   to { transform: translateY(-50%); }
@@ -61,7 +57,6 @@ a, button {
   animation: marquee-vertical 20s linear infinite;
 }
 
-/* Image Scan Line */
 @keyframes scan {
   0% { top: 0%; }
   100% { top: 100%; }
@@ -70,7 +65,6 @@ a, button {
   animation: scan 3s linear infinite;
 }
 
-/* Grid Background */
 .bg-grid-subtle {
   background-image: 
     linear-gradient(to right, rgba(0,0,0,0.15) 1px, transparent 1px),
