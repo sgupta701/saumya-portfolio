@@ -7,7 +7,6 @@ const CustomCursor = () => {
   const cursorRef = useRef(null);
 
   useEffect(() => {
-    // 1. Move the cursor based on mouse position
     const onMouseMove = (e) => {
       gsap.to(cursorRef.current, {
         x: e.clientX,
@@ -17,10 +16,8 @@ const CustomCursor = () => {
       });
     };
 
-    // 2. Add listener
     window.addEventListener('mousemove', onMouseMove);
-
-    // 3. Cleanup
+    
     return () => {
       window.removeEventListener('mousemove', onMouseMove);
     };
