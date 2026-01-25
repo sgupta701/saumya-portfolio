@@ -94,7 +94,6 @@ const Hero = () => {
   const summaryRef = useRef(null);
   const navRef = useRef(null);
   
-  // NEW REFS
   const planeRef = useRef(null);
   const mandalaRef = useRef(null);
 
@@ -103,12 +102,12 @@ const Hero = () => {
       const entryTl = gsap.timeline({ delay: 3.2 });
       entryTl
         .from(navRef.current, { y: -50, opacity: 0, duration: 0.8 })
-        // Summary & Plane enter together
+
         .fromTo(summaryRef.current, { x: -100, opacity: 0 }, { x: 0, opacity: 1, duration: 1 }, "-=0.4")
         .fromTo(planeRef.current, { scale: 0, opacity: 0 }, { scale: 1, opacity: 0.5, duration: 0.8 }, "-=0.8")
-        // Photo & Mandala enter together
+
         .fromTo(photoRef.current, { x: 100, opacity: 0 }, { x: 0, opacity: 1, duration: 1 }, "-=0.8")
-        .fromTo(mandalaRef.current, { scale: 0.5, opacity: 0, rotate: -90 }, { scale: 1, opacity: 1, rotate: 10, duration: 1.5, ease: "back.out(1.7)" }, "-=1");
+        .fromTo(mandalaRef.current, { scale: 0.5, opacity: 0, rotate: -90 }, { scale: 1, opacity: 0.4, rotate: 10, duration: 1.5, ease: "back.out(1.7)" }, "-=1");
 
       gsap.to(sectionRef.current, {
         xPercent: -50,
@@ -133,7 +132,7 @@ const Hero = () => {
         {/* SCREEN 1 */}
         <div className="w-screen h-full bg-white text-black flex relative overflow-hidden bg-grid-subtle">
           <Doodle innerRef={planeRef} src={paperplane} x="13%" y="18%" rotate={10} width="110px" scale={1} />
-          <Doodle innerRef={mandalaRef} src={mandala1} x="52%" y="23%" rotate={10} width="450px" scale={1} />
+          <Doodle innerRef={mandalaRef} src={mandala1} x="52%" y="23%" rotate={10} width="450px" scale={1} opacity={0.4} />
           <div className="w-[8vw] md:w-[6vw] border-r-2 border-black flex flex-col items-center overflow-hidden bg-white h-full relative z-20">
             <div className="animate-marquee-vertical flex flex-col shrink-0">
               {[...Array(20)].map((_, i) => (
@@ -166,7 +165,7 @@ const Hero = () => {
 
               <div ref={photoRef} className="w-full md:w-[25%] h-[61vh] relative group">
   
-              <div className="absolute inset-0 border-2 border-black bg-black translate-x-4 translate-y-4 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
+              <div className="absolute inset-0 border-2 border-black bg-black opacity-90 translate-x-4 translate-y-4 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
               
               <img 
                 src={profileImg} 
@@ -293,9 +292,7 @@ const Hero = () => {
             </div>
           </div>
 
-          <div className="h-[6vh] border-t-2 border-black flex items-center px-10 justify-between text-[10px] font-bold uppercase tracking-widest bg-white z-20">
-            <span>Career Path Visualization</span>
-          </div>
+          
         </div>
       </div>
     </div>
