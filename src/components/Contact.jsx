@@ -46,7 +46,7 @@ const Contact = () => {
         →
       </div>
 
-      <div className="relative z-10 w-full max-w-2xl px-6">
+      <div className="relative z-10 w-full max-w-4xl px-6">
         
         <div className="relative bg-black border-2 border-dashed border-white/80 p-8 md:p-16 text-center shadow-[20px_20px_0px_0px_rgba(30,30,30,1)] rotate-[-1deg] hover:rotate-0 transition-transform duration-500">
 
@@ -87,7 +87,8 @@ const Contact = () => {
             {[
               { name: 'GITHUB', link: 'https://github.com/sgupta701' },
               { name: 'LINKEDIN', link: 'https://www.linkedin.com/in/saumya-gupta-4385452a4/' },
-              { name: 'INSTAGRAM', link: 'https://www.instagram.com/__gupta.saumya_?igsh=MXNiMmh3OHJmdnpxdA==' }
+              { name: 'INSTAGRAM', link: 'https://www.instagram.com/__gupta.saumya_?igsh=MXNiMmh3OHJmdnpxdA==' },
+              { name: 'RESUME', link: 'https://drive.google.com/file/d/1deBj9ZClOHZceJ8YueCPp533iEF1pnHx/view?usp=drive_link' }
             ].map((social) => (
               <a 
                 key={social.name} 

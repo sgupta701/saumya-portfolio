@@ -177,7 +177,7 @@ const Projects = () => {
                       [ DISPLAY ]
                     </button>
                     
-                    <div className="absolute bottom-full left-0 mb-6 w-56 h-auto border-2 border-zinc-100 opacity-0 scale-90 group-hover/img:opacity-100 group-hover/img:scale-100 transition-all duration-300 pointer-events-none z-50 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+                    <div className="absolute bottom-full left-0 mb-6 w-120 h-auto border-2 border-zinc-100 opacity-0 scale-90 group-hover/img:opacity-100 group-hover/img:scale-100 transition-all duration-300 pointer-events-none z-50 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
                       <img src={displayneura} alt="Project Preview" className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-500" />
                       <div className="bg-zinc-100 text-black text-[10px] font-black p-1 text-center uppercase">NEURA Interface</div>
                     </div>
@@ -274,7 +274,7 @@ const Projects = () => {
                   <div className="relative group/img">
                     <button className="text-zinc-600 border-b-2 border-zinc-200 pb-1 hover:text-black hover:border-black transition-all text-xl font-bold tracking-widest uppercase">[ DISPLAY ]</button>
                     
-                    <div className="absolute bottom-full left-0 mb-6 w-56 h-auto border-2 border-black opacity-0 scale-90 group-hover/img:opacity-100 group-hover/img:scale-100 transition-all duration-300 pointer-events-none z-50 shadow-2xl">
+                    <div className="absolute bottom-full left-0 mb-6 w-120 h-auto border-2 border-black opacity-0 scale-90 group-hover/img:opacity-100 group-hover/img:scale-100 transition-all duration-300 pointer-events-none z-50 shadow-2xl">
                       <img src={displayarclens} alt="ArcLens Preview" className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-500" />
                       <div className="bg-black text-white text-[10px] font-black p-1 text-center uppercase">ArcLens Interface</div>
                     </div>
@@ -361,13 +361,13 @@ seamless chatting and text entry across any application - demonstrated with game
                       [ DISPLAY ]
                     </button>
                     
-                    <div className="absolute bottom-full left-0 mb-6 w-56 h-auto border-2 border-zinc-100 opacity-0 scale-90 group-hover/img:opacity-100 group-hover/img:scale-100 transition-all duration-300 pointer-events-none z-50 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+                    <div className="absolute bottom-full left-0 mb-6 w-120 h-auto border-2 border-zinc-100 opacity-0 scale-90 group-hover/img:opacity-100 group-hover/img:scale-100 transition-all duration-300 pointer-events-none z-50 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
                       <img src={displayglyphio} alt="Project Preview" className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-500" />
                       <div className="bg-zinc-100 text-black text-[10px] font-black p-1 text-center uppercase">Demonstrated with game AmongUs</div>
                     </div>
                   </div>
 
-                  <div className="relative group/img">
+                  {/* <div className="relative group/img">
                     <button 
                       onClick={() => setIsGlyphIOWorkflowOpen(true)}
                       className="text-zinc-400 border-b-2 border-zinc-700 pb-1 hover:text-white hover:border-white transition-all text-xl font-bold tracking-widest uppercase"
@@ -379,7 +379,7 @@ seamless chatting and text entry across any application - demonstrated with game
                       <img src={guitar} alt="Project Preview" className="w-full h-auto grayscale" />
                       <div className="bg-zinc-100 text-black text-[10px] font-black p-1 text-center uppercase italic">Click to expand</div>
                     </div>
-                  </div>
+                  </div> */}
 
                   <a 
                     href="https://github.com/sgupta701/GlyphIO_amongus_hand_control" 
@@ -457,7 +457,7 @@ seamless chatting and text entry across any application - demonstrated with game
                   <div className="relative group/img">
                     <button className="text-zinc-600 border-b-2 border-zinc-200 pb-1 hover:text-black hover:border-black transition-all text-xl font-bold tracking-widest uppercase">[ DISPLAY ]</button>
                     
-                    <div className="absolute bottom-full left-0 mb-6 w-56 h-auto border-2 border-black opacity-0 scale-90 group-hover/img:opacity-100 group-hover/img:scale-100 transition-all duration-300 pointer-events-none z-50 shadow-2xl">
+                    <div className="absolute bottom-full left-0 mb-6 w-120 h-auto border-2 border-black opacity-0 scale-90 group-hover/img:opacity-100 group-hover/img:scale-100 transition-all duration-300 pointer-events-none z-50 shadow-2xl">
                       <img src={displayvertaai} alt="VertaAI Preview" className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-500" />
                       <div className="bg-black text-white text-[10px] font-black p-1 text-center uppercase">VertaAI Interface</div>
                     </div>
@@ -543,13 +543,13 @@ seamless chatting and text entry across any application - demonstrated with game
                       [ DISPLAY ]
                     </button>
                     
-                    <div className="absolute bottom-full left-0 mb-6 w-56 h-auto border-2 border-zinc-100 opacity-0 scale-90 group-hover/img:opacity-100 group-hover/img:scale-100 transition-all duration-300 pointer-events-none z-50 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
+                    <div className="absolute bottom-full left-0 mb-6 w-120 h-auto border-2 border-zinc-100 opacity-0 scale-90 group-hover/img:opacity-100 group-hover/img:scale-100 transition-all duration-300 pointer-events-none z-50 shadow-[0_0_30px_rgba(0,0,0,0.5)]">
                       <img src={displayrealtimechatbot} alt="Project Preview" className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-500" />
-                      <div className="bg-zinc-100 text-black text-[10px] font-black p-1 text-center uppercase">system_preview.jpg</div>
+                      <div className="bg-zinc-100 text-black text-[10px] font-black p-1 text-center uppercase">Real Time Chat between me and Ritika</div>
                     </div>
                   </div>
 
-                  <div className="relative group/img">
+                  {/*  <div className="relative group/img">
                     <button 
                       onClick={() => setIsRealTimeChatbotWorkflowOpen(true)}
                       className="text-zinc-400 border-b-2 border-zinc-700 pb-1 hover:text-white hover:border-white transition-all text-xl font-bold tracking-widest uppercase"
@@ -561,7 +561,7 @@ seamless chatting and text entry across any application - demonstrated with game
                       <img src={guitar} alt="Project Preview" className="w-full h-auto grayscale" />
                       <div className="bg-zinc-100 text-black text-[10px] font-black p-1 text-center uppercase italic">Click to expand</div>
                     </div>
-                  </div>
+                  </div> */}
 
                   <a 
                     href="https://github.com/sgupta701/Real-Time-Chatapp-using-.NET" 
@@ -631,7 +631,7 @@ seamless chatting and text entry across any application - demonstrated with game
                   <div className="relative group/img">
                     <button className="text-zinc-600 border-b-2 border-zinc-200 pb-1 hover:text-black hover:border-black transition-all text-xl font-bold tracking-widest uppercase">[ DISPLAY ]</button>
                     
-                    <div className="absolute bottom-full left-0 mb-6 w-56 h-auto border-2 border-black opacity-0 scale-90 group-hover/img:opacity-100 group-hover/img:scale-100 transition-all duration-300 pointer-events-none z-50 shadow-2xl">
+                    <div className="absolute bottom-full left-0 mb-6 w-120 h-auto border-2 border-black opacity-0 scale-90 group-hover/img:opacity-100 group-hover/img:scale-100 transition-all duration-300 pointer-events-none z-50 shadow-2xl">
                       <img src={displayportfolio} alt="Portfolio Preview" className="w-full h-auto grayscale hover:grayscale-0 transition-all duration-500" />
                       <div className="bg-black text-white text-[10px] font-black p-1 text-center uppercase">My Portfolio</div>
                     </div>

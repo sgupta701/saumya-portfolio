@@ -290,7 +290,7 @@ const Hero = () => {
                 DOWNLOAD RESUME
               </a>
               <a href="https://github.com/sgupta701" target="_blank" rel="noreferrer" className="hover:text-gray-700 transition-all hover:scale-110">GITHUB</a>
-              <a href="https://www.linkedin.com/in/saumya-gupta-4385452a4/" target="_blank" rel="noreferrer" className="hover:text-neon-green transition-all hover:scale-110">LINKEDIN</a>
+              <a href="https://www.linkedin.com/in/saumya-gupta-4385452a4/" target="_blank" rel="noreferrer" className="hover:text-gray-700 transition-all hover:scale-110">LINKEDIN</a>
             </nav>
 
           <div className="flex-grow relative overflow-hidden">
