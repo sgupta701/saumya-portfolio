@@ -7,6 +7,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import rightarrow from '../assets/right-arrow.png';
 import guitar from '../assets/guitar.png';
 import exercise from '../assets/exercise.png';
+import dotteddown from '../assets/dotted-down.png';
+
 import neuraworkflow from '../assets/neuraworkflow.png';
 import displayneura from '../assets/displayneura.png';
 import displayarclens from '../assets/displayarclens.png';
@@ -46,7 +48,7 @@ const Projects = () => {
   const [isGlyphIOWorkflowOpen, setIsGlyphIOWorkflowOpen] = useState(false);
   const [isVertaAIWorkflowOpen, setIsVertaAIWorkflowOpen] = useState(false);
   const [isRealTimeChatbotWorkflowOpen, setIsRealTimeChatbotWorkflowOpen] = useState(false);
-  
+
   useEffect(() => {
 
     const pin = gsap.fromTo(
@@ -82,7 +84,6 @@ const Projects = () => {
             <Doodle src={rightarrow} x="91%" y="7%" rotate={10} width="90px" scale={1} />
             <Doodle src={guitar} x="0%" y="19%" rotate={10} width="100px" scale={1} />
             <Doodle src={exercise} x="93%" y="80%" rotate={10} width="100px" scale={1} />
-
 
             <div className="mb-8">
               <h2 className="text-5xl md:text-6xl font-medium leading-tight">

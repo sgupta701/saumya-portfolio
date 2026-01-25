@@ -12,14 +12,14 @@ const Contact = () => {
 
       <div className="z-10 text-center">
         <p className="text-neon-green text-xl mb-4 font-bold animate-pulse">
-          &lt; SYSTEM STATUS: HIRING /&gt;
+          &lt; SYSTEM STATUS: OPEN TO WORK /&gt;
         </p>
         <h2 className="text-6xl md:text-9xl font-black mb-10 leading-none">
           LET'S<br />CONNECT
         </h2>
-        
-        <a href="mailto:saumya@example.com" className="text-2xl md:text-4xl border-b-4 border-neon-green pb-2 hover:bg-neon-green hover:text-black transition-all font-bold">
-          saumya.gupta@aktu.ac.in
+
+        <a href="mailto:gupta.sg003@gmail.com" className="text-2xl md:text-4xl border-b-4 border-neon-green pb-2 hover:bg-neon-green hover:text-black transition-all font-bold">
+          gupta.sg003@gmail.com
         </a>
 
         <div className="mt-20 flex gap-10 justify-center">
@@ -32,7 +32,7 @@ const Contact = () => {
       </div>
       
       <div className="absolute bottom-5 text-gray-500 text-sm">
-        © 2026 SAUMYA GUPTA. ALL SYSTEMS OPERATIONAL.
+        SAUMYA GUPTA
       </div>
     </div>
   );

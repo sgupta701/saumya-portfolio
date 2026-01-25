@@ -58,16 +58,16 @@ const KineticText = () => {
 };
 
 const milestones = [
-  { id: 'cp1', title: "10th", detail: "98% (St. Francis Convent Sr. Sec. School, Bareilly)", size: "small", x: "12%", y: "20%" },
-  { id: 'y2019', year: "2019", size: "large", x: "17%", y: "20%" },
-  { id: 'cp2', title: "12th", detail: "91.4% (St. Francis Convent Sr. Sec. School, Bareilly)", size: "small", x: "33%", y: "20%" },
-  { id: 'y2021', year: "2021", size: "large", x: "39%", y: "20%" },
-  { id: 'y2022', year: "2022", size: "large", x: "45%", y: "20%" },
-  { id: 'cp3', title: "APTECH Catechization", detail: "APTECH Catechization - 1st position (Technovaganza)", size: "small", x: "60%", y: "20%" },
-  { id: 'y2023', year: "2023", size: "large", x: "65%", y: "20%" },
-  { id: 'cp4', title: "Code Starters", detail: "Code Starters - 3rd place (COMPTECH)", size: "small", x: "73%", y: "20%" },
-  { id: 'cp5', title: "Digital Poster Making", detail: "Digital Poster Making - 3rd Position (TECHVYOM)", size: "small", x: "82%", y: "20%" },
-  { id: 'cp5b', title: "Hackathon, SRMSCET", detail: "2nd rank. “AI-based automatic alarm generation and Dropping of payload via Drone”", size: "small", x: "89%", y: "20%" },
+  { id: 'cp1', title: "10th", detail: "98% (St. Francis Convent Sr. Sec. School, Bareilly)", size: "small", x: "12%", y: "19%" },
+  { id: 'y2019', year: "2019", size: "large", x: "17%", y: "19%" },
+  { id: 'cp2', title: "12th", detail: "91.4% (St. Francis Convent Sr. Sec. School, Bareilly)", size: "small", x: "33%", y: "19%" },
+  { id: 'y2021', year: "2021", size: "large", x: "39%", y: "19%" },
+  { id: 'y2022', year: "2022", size: "large", x: "45%", y: "19%" },
+  { id: 'cp3', title: "APTECH Catechization", detail: "APTECH Catechization - 1st position (Technovaganza)", size: "small", x: "60%", y: "19%" },
+  { id: 'y2023', year: "2023", size: "large", x: "65%", y: "19%" },
+  { id: 'cp4', title: "Code Starters", detail: "Code Starters - 3rd place (COMPTECH)", size: "small", x: "73%", y: "19%" },
+  { id: 'cp5', title: "Digital Poster Making", detail: "Digital Poster Making - 3rd Position (TECHVYOM)", size: "small", x: "82%", y: "19%" },
+  { id: 'cp5b', title: "Hackathon, SRMSCET", detail: "2nd rank. “AI-based automatic alarm generation and Dropping of payload via Drone”", size: "small", x: "89%", y: "19%" },
   { id: 'y2024', year: "2024", size: "large", x: "90%", y: "34%" },
   { id: 'cp6', title: "Design Dynamo", detail: "Design Dynamo - 3rd Position (TECHVYOM)", size: "small", x: "90%", y: "49%" },
   { id: 'cp7', title: "Clone the Web", detail: "Clone the Web - 3rd Place (TECHVYOM)", size: "small", x: "83%", y: "50%" },
@@ -189,16 +189,16 @@ const Hero = () => {
           <Doodle src={right} x="25%" y="22.7%" rotate={25} width="40px" scale={1} />
           <Doodle src={right} x="55%" y="22.7%" rotate={25} width="40px" scale={1} />
           <Doodle src={right} x="77%" y="22.7%" rotate={25} width="40px" scale={1} />
-          <Doodle src={left} x="24.7%" y="48.3%" rotate={25} width="40px" scale={1} />
-          <Doodle src={left} x="48.8%" y="48.3%" rotate={25} width="40px" scale={1} />
-          <Doodle src={left} x="78%" y="48.3%" rotate={25} width="40px" scale={1} />
-          <Doodle src={right} x="34.6%" y="74.3%" rotate={25} width="40px" scale={1} />
-          <Doodle src={right} x="15%" y="74.3%" rotate={25} width="40px" scale={1} />
-          <Doodle src={leftarrow} x="73%" y="51%" rotate={25} width="75px" scale={1} />
+          <Doodle src={left} x="24.7%" y="51%" rotate={25} width="40px" scale={1} />
+          <Doodle src={left} x="48.8%" y="51%" rotate={25} width="40px" scale={1} />
+          <Doodle src={left} x="78%" y="51%" rotate={25} width="40px" scale={1} />
+          <Doodle src={right} x="34.6%" y="79%" rotate={25} width="40px" scale={1} />
+          <Doodle src={right} x="15%" y="79%" rotate={25} width="40px" scale={1} />
+          <Doodle src={leftarrow} x="73%" y="54%" rotate={25} width="75px" scale={1} />
           <Doodle src={down} x="89%" y="15%" rotate={25} width="48px" scale={1} />
           <Doodle src={down} x="28%" y="19%" rotate={25} width="40px" scale={1} />
-          <Doodle src={dotteddown} x="48%" y="39%" rotate={25} width="85px" scale={1} />
-          <Doodle src={up} x="8%" y="76%" rotate={25} width="65px" scale={1} />
+          <Doodle src={dotteddown} x="48%" y="41%" rotate={25} width="85px" scale={1} />
+          <Doodle src={up} x="8%" y="81%" rotate={25} width="65px" scale={1} />
 
           <nav className="w-full border-b-2 border-black flex justify-between items-center px-6 py-4 h-[8vh] bg-white z-20">
             <div className="text-2xl font-bold tracking-tighter uppercase">SAUMYA GUPTA</div>
@@ -210,7 +210,7 @@ const Hero = () => {
 
           <div className="flex-grow relative overflow-hidden">
             <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full pointer-events-none z-0">
-              <polyline points="10,20 90,20 90,50 10,50 10,80 40,80" fill="none" stroke="#3c3838" strokeWidth="0.4" strokeDasharray="1,1" className="opacity-70" />
+              <polyline points="10,19 90,19 90,50 10,50 10,80 40,80" fill="none" stroke="#3c3838" strokeWidth="0.4" strokeDasharray="1,1" className="opacity-70" />
             </svg>
 
             {milestones.map((m) => (
@@ -255,34 +255,34 @@ const Hero = () => {
               </div>
             </div>
 
-            <div className="absolute top-[7%] right-[3%] pointer-events-none select-none z-0 text-left overflow-hidden">
-              <h2 className="text-[1vw] font-black tracking-tighter text-gray-400 opacity-60 leading-[0.8]">
+            <div className="absolute top-[6%] right-[3%] pointer-events-none select-none z-0 text-left overflow-hidden">
+              <h2 className="text-[1vw] font-black tracking-tighter text-gray-400 opacity-70 leading-[0.8]">
                 competitions
               </h2>
             </div>
-            <div className="absolute top-[11%] left-[29%] pointer-events-none select-none z-0 text-left overflow-hidden">
-              <h2 className="text-[1vw] font-black tracking-tighter text-gray-400 opacity-60 leading-[0.8]">
+            <div className="absolute top-[10%] left-[29%] pointer-events-none select-none z-0 text-left overflow-hidden">
+              <h2 className="text-[1vw] font-black tracking-tighter text-gray-400 opacity-70 leading-[0.8]">
                 education
               </h2>
             </div>
             <div className="absolute top-[37%] right-[48%] pointer-events-none select-none z-0 text-left overflow-hidden">
-              <h2 className="text-[1vw] font-black tracking-tighter text-gray-400 opacity-60 leading-[0.8]">
+              <h2 className="text-[1vw] font-black tracking-tighter text-gray-400 opacity-70 leading-[0.8]">
                 hackathons
               </h2>
             </div>
             <div className="absolute bottom-[9%] left-[4%] pointer-events-none select-none z-0 text-left overflow-hidden">
-              <h2 className="text-[1vw] font-black tracking-tighter text-gray-400 opacity-60 leading-[0.8]">
+              <h2 className="text-[1vw] font-black tracking-tighter text-gray-400 opacity-70 leading-[0.8]">
                 internships
               </h2>
             </div>
             <div className="absolute bottom-[42%] right-[12%] pointer-events-none select-none z-0 text-left overflow-hidden">
-              <h2 className="text-[1vw] font-black tracking-tighter text-gray-400 opacity-80 leading-[0.8]">
+              <h2 className="text-[1vw] font-black tracking-tighter text-gray-500 opacity-80 leading-[0.8]">
                 hover for details
               </h2>
             </div>
-            <div className="absolute top-[2%] left-[1%] pointer-events-none select-none z-0 text-left overflow-hidden">
-              <h2 className="text-[4vw] font-black uppercase tracking-tighter text-gray-400 opacity-50 leading-[0.8]">
-                CAREER PATH
+            <div className="absolute top-[1%] left-[1%] pointer-events-none select-none z-0 text-left overflow-hidden">
+              <h2 className="text-[4vw] font-black tracking-tighter text-gray-400 opacity-50 leading-[0.8]">
+                MY timeline
               </h2>
             </div>
             <div className="absolute bottom-[13%] right-[8%] pointer-events-none select-none z-0 text-right overflow-hidden">
