@@ -6,7 +6,8 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import rightarrow from '../assets/right-arrow.png';
 import guitar from '../assets/guitar.png';
-import exercise from '../assets/exercise.png';
+import run from '../assets/run.png';
+import magnifyingglass from '../assets/magnifying-glass.png';
 import dotteddown from '../assets/dotted-down.png';
 
 import neuraworkflow from '../assets/neuraworkflow.png';
@@ -50,28 +51,29 @@ const Projects = () => {
   const [isRealTimeChatbotWorkflowOpen, setIsRealTimeChatbotWorkflowOpen] = useState(false);
 
   useEffect(() => {
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        sectionRef.current,
+        { x: 0 },
+        {
+          x: () => -(sectionRef.current.scrollWidth - window.innerWidth),
+          
+          ease: "none",
+          scrollTrigger: {
+            trigger: triggerRef.current,
+            start: "top top",
+            end: "+=15000", 
+            
+            scrub: 1, 
+            pin: true,
+            anticipatePin: 1,
+            invalidateOnRefresh: true,
+          },
+        }
+      );
+    });
 
-    const pin = gsap.fromTo(
-      sectionRef.current,
-      { translateX: 0 },
-      {
-        // (Total Screens - 1) * 100
-
-        xPercent: -100, 
-        ease: "none",
-        scrollTrigger: {
-          trigger: triggerRef.current,
-          start: "top top",
-          end: 4000, 
-          scrub: 0.2,
-          pin: true,
-          anticipatePin: 1,
-        },
-      }
-    );
-    return () => {
-      pin.kill();
-    };
+    return () => ctx.revert(); 
   }, []);
 
   return (
@@ -80,12 +82,13 @@ const Projects = () => {
         <div ref={sectionRef} className="h-screen w-[600vw] flex flex-row relative">
 
           {/* scr 1 */}
-          <div className="w-screen h-full flex-shrink-0 justify-start pt-45 bg-white bg-grid-subtle overflow-hidden border-r-2 border-black relative px-12 md:px-24">           
+          <div className="w-screen h-full flex-shrink-0 justify-start pt-42 bg-white bg-grid-subtle overflow-hidden border-r-2 border-black relative px-12 md:px-24">           
             <Doodle src={rightarrow} x="91%" y="7%" rotate={10} width="90px" scale={1} />
-            <Doodle src={guitar} x="0%" y="19%" rotate={10} width="100px" scale={1} />
-            <Doodle src={exercise} x="93%" y="80%" rotate={10} width="100px" scale={1} />
+            <Doodle src={guitar} x="0%" y="16%" rotate={10} width="110px" scale={1} />
+            <Doodle src={run} x="90%" y="78%" rotate={10} width="125px" scale={1} />
+            <Doodle src={magnifyingglass} x="71%" y="14%" rotate={10} width="170px" scale={1} opacity={0.3} />
 
-            <div className="mb-8">
+            <div className="mb-6">
               <h2 className="text-5xl md:text-6xl font-medium leading-tight">
                 HELLO, <br />
                 I'M <span className="text-gray-600 font-bold">SAUMYA GUPTA...</span>
@@ -94,7 +97,7 @@ const Projects = () => {
 
             <div className="max-w-3xl mb-16">
               <p className="text-xl md:text-2xl font-medium leading-relaxed uppercase">
-                Translating theoretical architectures into functional code. Here is the documentation of my core builds and <span className="text-gray-600 font-bold"> Projects.</span>
+                I Enjoy Translating theoretical architectures into functional code. Here is the documentation of my core builds and <span className="text-gray-600 font-bold"> Projects.</span>
               </p>
             </div>
 
@@ -110,7 +113,7 @@ const Projects = () => {
             </div>
 
             <div className="absolute top-[20%] right-[3%] pointer-events-none select-none z-0 text-left overflow-hidden">
-              <h2 className="text-[1.7vw] font-black tracking-tighter text-gray-400 opacity-78 leading-[0.8]">
+              <h2 className="text-[1.7vw] font-black tracking-tighter text-gray-500 opacity-87 leading-[0.8]">
                 EXPLORE SELECTED PROJECTS
               </h2>
             </div>
@@ -665,7 +668,7 @@ seamless chatting and text entry across any application - demonstrated with game
         </div>
       )}
 
-      {/* ArcLens Workflow */}
+      {/* ArcLens workflow */}
       {isArcLensWorkflowOpen && (
         <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/90 backdrop-blur-md p-4 md:p-10 cursor-zoom-out" onClick={() => setIsArcLensWorkflowOpen(false)}>
           <div className="relative max-w-5xl w-full max-h-full border-2 border-black bg-white p-2 shadow-2xl cursor-default" onClick={(e) => e.stopPropagation()}>
@@ -680,7 +683,7 @@ seamless chatting and text entry across any application - demonstrated with game
         </div>
       )}
 
-      {/* GlyphIO Workflow */}
+      {/* GlyphIO workflow */}
       {isGlyphIOWorkflowOpen && (
         <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/90 backdrop-blur-md p-4 md:p-10 cursor-zoom-out" onClick={() => setIsArcLensFlowOpen(false)}>
           <div className="relative max-w-5xl w-full max-h-full border-2 border-black bg-white p-2 shadow-2xl cursor-default" onClick={(e) => e.stopPropagation()}>
@@ -696,7 +699,7 @@ seamless chatting and text entry across any application - demonstrated with game
         </div>
       )}
 
-      {/* VertaAI Workflow */}
+      {/* VertaAI workflow */}
       {isVertaAIWorkflowOpen && (
         <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/90 backdrop-blur-md p-4 md:p-10 cursor-zoom-out" onClick={() => setIsArcLensFlowOpen(false)}>
           <div className="relative max-w-5xl w-full max-h-full border-2 border-black bg-white p-2 shadow-2xl cursor-default" onClick={(e) => e.stopPropagation()}>
@@ -712,7 +715,7 @@ seamless chatting and text entry across any application - demonstrated with game
         </div>
       )}
 
-      {/* Real Time Chat App Workflow */}
+      {/* Real Time Chat App wrkflow */}
       {isRealTimeChatbotWorkflowOpen && (
         <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/90 backdrop-blur-md p-4 md:p-10 cursor-zoom-out" onClick={() => setIsArcLensFlowOpen(false)}>
           <div className="relative max-w-5xl w-full max-h-full border-2 border-black bg-white p-2 shadow-2xl cursor-default" onClick={(e) => e.stopPropagation()}>

@@ -2,11 +2,14 @@ import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+import resumePDF from '../assets/resumePDF.pdf'; 
 import profileImg from '../assets/profile.png'; 
 import arrowImg from '../assets/arrows.png'; 
 import hehe from '../assets/hehe.png'; 
 import rotatedarrow from '../assets/rotatedarrow.png';
 import paperplane from '../assets/paper-plane.png';
+import downwards from '../assets/downwards.png';
+import downwards2 from '../assets/downwards2.png';
 import uparrow from '../assets/up-arrow.png';
 import woman from '../assets/woman.png';
 import arglasses from '../assets/ar-glasses.png';
@@ -19,6 +22,7 @@ import leftarrow from '../assets/left-arrow.png';
 import dotteddown from '../assets/dotted-down.png';
 import up from '../assets/up.png';
 import down from '../assets/down.png';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -87,6 +91,15 @@ const milestones = [
   { id: 'cp18', title: "Joined Bitgranth Organization", detail: "Full Stack Developer at Bitgranth Organization", size: "small", x: "40%", y: "80%" },
 ];
 
+const projectSummary = [
+  { id: '01', name: 'NEURA', status: '[COMPLETED]', year: '2025', type: 'AI / Automation', desc: 'A Chat-to-Action Multi-Intent Task Execution System. Instead of writing individual commands, one can simply chat in plain English assigning multiple tasks.' },
+  { id: '02', name: 'ArcLens', status: '[ONGOING]', year: '2026', type: 'FULL STACK + ML', desc: 'Unified Document Intelligence & Routing System. Uses OCR and deep learning to extract, classify, summarize and route documents automatically.' },
+  { id: '03', name: 'GlyphIO', status: '[COMPLETED]', year: '2025', type: 'AI/ML', desc: 'American Sign Language [ASL] based Gesture Controller & Chat System. Converts ASL alphabets directly into text for seamless chatting.' },
+  { id: '04', name: 'VertaAI', status: '[COMPLETED]', year: '2025', type: 'ML + Frontend', desc: 'A Multi Language Translator. Full-stack AI-powered web app for real-time multilingual text translation using Hugging Face’s MBART transformer model.' },
+  { id: '05', name: 'ChatApp .NET', status: '[COMPLETED]', year: '2025', type: '.NET / TCP', desc: 'Real-Time Chat System (TCP + WPF GUI). Lightweight chat system supporting multiple users via TCP server, client, and login authentication.' },
+  { id: '06', name: 'Portfolio', status: '[DEPLOYED]', year: '2026', type: 'React', desc: 'Personal Portfolio & Project Archive. Designed with a focus on a clean frontend and brutalist aesthetic.' },
+];
+
 const Hero = () => {
   const sectionRef = useRef(null);
   const triggerRef = useRef(null);
@@ -96,6 +109,15 @@ const Hero = () => {
   
   const planeRef = useRef(null);
   const mandalaRef = useRef(null);
+
+  const downwardsRef = useRef(null);
+  const downwards2Ref = useRef(null);
+
+  const textRef1 = useRef(null); 
+  const textRef2 = useRef(null);
+
+  const [isSkillsOpen, setIsSkillsOpen] = useState(false);
+  const [isProjectsOpen, setIsProjectsOpen] = useState(false); 
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -107,7 +129,12 @@ const Hero = () => {
         .fromTo(planeRef.current, { scale: 0, opacity: 0 }, { scale: 1, opacity: 0.5, duration: 0.8 }, "-=0.8")
 
         .fromTo(photoRef.current, { x: 100, opacity: 0 }, { x: 0, opacity: 1, duration: 1 }, "-=0.8")
-        .fromTo(mandalaRef.current, { scale: 0.5, opacity: 0, rotate: -90 }, { scale: 1, opacity: 0.4, rotate: 10, duration: 1.5, ease: "back.out(1.7)" }, "-=1");
+        .fromTo(mandalaRef.current, { scale: 0.5, opacity: 0, rotate: -90 }, { scale: 1, opacity: 0.4, rotate: 10, duration: 1.5, ease: "back.out(1.7)" }, "-=1")
+        .fromTo(downwardsRef.current, { x: 100, opacity: 0 }, { x: 0, opacity: 1, duration: 1 }, "-=0.8")
+        .fromTo(downwards2Ref.current, { x: 100, opacity: 0 }, { x: 0, opacity: 1, duration: 1 }, "-=0.8")
+
+        .fromTo(textRef1.current, { y: -20, opacity: 0 }, { y: 0, opacity: 1, duration: 1 }, "-=1.5")
+        .fromTo(textRef2.current, { y: -20, opacity: 0 }, { y: 0, opacity: 1, duration: 1 }, "-=1.4");
 
       gsap.to(sectionRef.current, {
         xPercent: -50,
@@ -129,10 +156,25 @@ const Hero = () => {
     <div ref={triggerRef} className="overflow-hidden bg-white">
       <div ref={sectionRef} className="flex w-[200vw] h-screen font-mono">
         
-        {/* SCREEN 1 */}
+        {/* scrr */}
         <div className="w-screen h-full bg-white text-black flex relative overflow-hidden bg-grid-subtle">
-          <Doodle innerRef={planeRef} src={paperplane} x="13%" y="18%" rotate={10} width="110px" scale={1} />
-          <Doodle innerRef={mandalaRef} src={mandala1} x="52%" y="23%" rotate={10} width="450px" scale={1} opacity={0.4} />
+          <Doodle innerRef={planeRef} src={paperplane} x="13%" y="21%" rotate={10} width="110px" scale={1} />
+          <Doodle innerRef={mandalaRef} src={mandala1} x="52%" y="26%" rotate={10} width="450px" scale={1} opacity={0.4} />
+          <Doodle innerRef={downwardsRef} src={downwards} x="81%" y="19%" rotate={10} width="40px" scale={1} opacity={0.4}/>
+          <Doodle innerRef={downwards2Ref} src={downwards2} x="67%" y="19%" rotate={10} width="40px" scale={1} opacity={0.4}/>
+
+          <div ref={textRef1} className="absolute top-[16%] left-[67%] -translate-x-1/2 -translate-y-1/2 z-20 text-center pointer-events-none">
+            <p className="font-mono font-bold text-xs md:text-sm tracking-widest opacity-70">
+              B.Tech (CSE)<br/> Final Year Undergrad
+            </p>
+          </div>
+
+          <div ref={textRef2} className="absolute top-[16%] left-[84%] -translate-x-1/2 -translate-y-1/2 z-20 text-center pointer-events-none">
+            <p className="font-mono font-bold text-xs md:text-sm tracking-widest opacity-70">
+              Bareilly, <br/> India
+            </p>
+          </div>
+
           <div className="w-[8vw] md:w-[6vw] border-r-2 border-black flex flex-col items-center overflow-hidden bg-white h-full relative z-20">
             <div className="animate-marquee-vertical flex flex-col shrink-0">
               {[...Array(20)].map((_, i) => (
@@ -144,14 +186,32 @@ const Hero = () => {
               ))}
             </div>
           </div>
-
           <div className="flex-grow flex flex-col relative z-10">
             <nav ref={navRef} className="w-full border-b-2 border-black flex justify-end items-center px-10 h-[8vh] gap-8 font-bold text-sm tracking-widest bg-white">
-              <a href="https://github.com/sgupta701" target="_blank" rel="noreferrer" className="hover:text-neon-green transition-all hover:scale-110">GITHUB</a>
-              <a href="https://www.linkedin.com/in/saumya-gupta-4385452a4/" target="_blank" rel="noreferrer" className="hover:text-neon-green transition-all hover:scale-110">LINKEDIN</a>
+              <button 
+                onClick={() => setIsProjectsOpen(true)} 
+                className="hover:text-gray-700 transition-all hover:scale-110 uppercase cursor-pointer"
+              >
+                PROJECT SUMMARY
+              </button>
+              <button 
+                onClick={() => setIsSkillsOpen(true)} 
+                className="hover:text-gray-700 transition-all hover:scale-110 uppercase cursor-pointer"
+              >
+                TECHNICAL SKILLS
+              </button>
+              <a 
+                href={resumePDF} 
+                download="Saumya_Gupta_Resume.pdf" 
+                className="hover:text-gray-700 transition-all hover:scale-110 uppercase cursor-pointer"
+              >
+                DOWNLOAD RESUME
+              </a>
+              <a href="https://github.com/sgupta701" target="_blank" rel="noreferrer" className="hover:text-gray-700 transition-all hover:scale-110">GITHUB</a>
+              <a href="https://www.linkedin.com/in/saumya-gupta-4385452a4/" target="_blank" rel="noreferrer" className="hover:text-gray-700 transition-all hover:scale-110">LINKEDIN</a>
             </nav>
 
-            <div className="flex-grow flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 px-12 md:px-24">
+            <div className="flex-grow flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 px-12 md:px-24 translate-y-9">
               <div ref={summaryRef} className="w-full md:w-1/2 relative">
                 <span className="absolute -top-20 -left-10 text-[12rem] font-black text-gray-100 -z-10 select-none opacity-50">01</span>
                 <h2 className="text-5xl md:text-7xl font-black leading-[0.9] mb-6 uppercase italic">
@@ -164,28 +224,30 @@ const Hero = () => {
               </div>
 
               <div ref={photoRef} className="w-full md:w-[25%] h-[61vh] relative group">
-  
-              <div className="absolute inset-0 border-2 border-black bg-black opacity-90 translate-x-4 translate-y-4 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
-              
-              <img 
-                src={profileImg} 
-                alt="Saumya Gupta" 
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 hover:scale-110 border-2 border-black" 
-              />
-            </div>
+                
+                <div className="absolute -top-5 left-1/2 -translate-x-1/2 w-32 h-8 bg-zinc-500/60 backdrop-blur-sm rotate-[-2deg] shadow-sm border border-black/20 z-50"></div>
+
+                <div className="absolute inset-0 border-2 border-black bg-black opacity-90 translate-x-4 translate-y-4 -z-10 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-500"></div>
+                
+                <img 
+                  src={profileImg} 
+                  alt="Saumya Gupta" 
+                  className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500 hover:scale-110 border-2 border-dashed border-black" 
+                />
+              </div>
             </div>
 
             <div className="h-[6vh] border-t-2 border-black flex items-center px-10 justify-between text-xs font-bold uppercase tracking-widest bg-white">
-              <span className="animate-pulse">Scroll to Explore</span>
+              <span>Scroll to explore some of my Projects.... </span>
             </div>
           </div>
         </div>
 
         {/* screen 2 */}
-        <div className="w-screen h-full flex flex-col bg-white text-black overflow-hidden relative bg-grid-subtle">
+        <div className="w-screen h-full flex-col flex bg-white text-black overflow-hidden relative bg-grid-subtle">
           
           <Doodle src={rotatedarrow} x="2%" y="23%" rotate={10} width="110px" scale={1} />
-          <Doodle src={uparrow} x="37.8%" y="79%" rotate={25} width="70px" scale={1} />
+          <Doodle src={uparrow} x="37.8%" y="84%" rotate={25} width="70px" scale={1} />
           <Doodle src={right} x="25%" y="22.7%" rotate={25} width="40px" scale={1} />
           <Doodle src={right} x="55%" y="22.7%" rotate={25} width="40px" scale={1} />
           <Doodle src={right} x="77%" y="22.7%" rotate={25} width="40px" scale={1} />
@@ -199,14 +261,37 @@ const Hero = () => {
           <Doodle src={down} x="28%" y="19%" rotate={25} width="40px" scale={1} />
           <Doodle src={dotteddown} x="48%" y="41%" rotate={25} width="85px" scale={1} />
           <Doodle src={up} x="8%" y="81%" rotate={25} width="65px" scale={1} />
+          
 
-          <nav className="w-full border-b-2 border-black flex justify-between items-center px-6 py-4 h-[8vh] bg-white z-20">
-            <div className="text-2xl font-bold tracking-tighter uppercase">SAUMYA GUPTA</div>
-            <div className="hidden md:flex gap-8 font-bold text-sm tracking-widest">
-              <a href="https://github.com/sgupta701" target="_blank" className="hover:text-neon-green">GITHUB</a>
-              <a href="https://www.linkedin.com/in/saumya-gupta-4385452a4/" target="_blank" className="hover:text-neon-green">LINKEDIN</a>
-            </div>
-          </nav>
+          <nav ref={navRef} className="w-full border-b-2 border-black flex justify-end items-center px-10 h-[8vh] gap-8 font-bold text-sm tracking-widest bg-white">
+              <button 
+                onClick={() => setIsProjectsOpen(true)} 
+                className="hover:text-gray-700 transition-all hover:scale-110 uppercase cursor-pointer"
+              >
+                PROJECT SUMMARY
+              </button>
+              <button 
+                onClick={() => setIsSkillsOpen(true)} 
+                className="hover:text-gray-700 transition-all hover:scale-110 uppercase cursor-pointer"
+              >
+                TECHNICAL SKILLS
+              </button>
+              <a 
+                href={resumePDF} 
+                download="Saumya_Gupta_Resume.pdf" 
+                className="hover:text-gray-700 transition-all hover:scale-110 uppercase cursor-pointer"
+              >
+              </a>
+              <a 
+                href={resumePDF} 
+                download="Saumya_Gupta_Resume.pdf" 
+                className="hover:text-gray-700 transition-all hover:scale-110 uppercase cursor-pointer"
+              >
+                DOWNLOAD RESUME
+              </a>
+              <a href="https://github.com/sgupta701" target="_blank" rel="noreferrer" className="hover:text-gray-700 transition-all hover:scale-110">GITHUB</a>
+              <a href="https://www.linkedin.com/in/saumya-gupta-4385452a4/" target="_blank" rel="noreferrer" className="hover:text-neon-green transition-all hover:scale-110">LINKEDIN</a>
+            </nav>
 
           <div className="flex-grow relative overflow-hidden">
             <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full pointer-events-none z-0">
@@ -280,9 +365,9 @@ const Hero = () => {
                 hover for details
               </h2>
             </div>
-            <div className="absolute top-[1%] left-[1%] pointer-events-none select-none z-0 text-left overflow-hidden">
-              <h2 className="text-[4vw] font-black tracking-tighter text-gray-400 opacity-50 leading-[0.8]">
-                MY timeline
+            <div className="absolute top-[3%] left-[1%] pointer-events-none select-none z-0 text-left overflow-hidden">
+              <h2 className="text-[3vw] font-black tracking-tighter text-gray-400 opacity-50 leading-[0.8]">
+                MY JOURNEY
               </h2>
             </div>
             <div className="absolute bottom-[13%] right-[8%] pointer-events-none select-none z-0 text-right overflow-hidden">
@@ -295,6 +380,103 @@ const Hero = () => {
           
         </div>
       </div>
+
+      {/* tech skills modal */}
+      {isSkillsOpen && (
+        <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/20 backdrop-blur-sm p-4">
+          <div className="bg-white border-2 border-dashed border-black w-full max-w-4xl shadow-[15px_15px_0px_0px_rgba(0,0,0,1)] relative animate-fadeIn font-mono">
+            
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-48 h-10 bg-zinc-200/80 backdrop-blur-sm rotate-1 shadow-sm border border-black/20 z-50"></div>
+
+            <div className="bg-black text-white p-4 flex justify-between items-center border-b-2 border-black">
+              <h2 className="text-xl md:text-2xl font-black tracking-tighter uppercase">
+                TECHNICAL SKILLS
+              </h2>
+              <button 
+                onClick={() => setIsSkillsOpen(false)}
+                className="text-white hover:text-gray-700 font-bold text-xl tracking-widest"
+              >
+                [ CLOSE ]
+              </button>
+            </div>
+            <div className="flex flex-col">
+              <div className="flex flex-col md:flex-row border-b-2 border-black group hover:bg-zinc-50 transition-colors">
+                <div className="w-full md:w-1/3 p-6 border-b-2 md:border-b-0 md:border-r-2 border-black bg-zinc-100 flex items-center">
+                  <span className="font-bold text-sm tracking-widest uppercase">LANGUAGES & FRAMEWORKS</span>
+                </div>
+                <div className="w-full md:w-2/3 p-6 font-medium text-sm md:text-base leading-relaxed">
+                  Python (& its libraries) <span className="text-zinc-400 mx-2">|</span> MERN Stack <span className="text-zinc-400 mx-2">|</span> JavaScript <span className="text-zinc-400 mx-2">|</span> C <span className="text-zinc-400 mx-2">|</span> Java <span className="text-zinc-400 mx-2">|</span> Node.js
+                </div>
+              </div>
+              <div className="flex flex-col md:flex-row border-b-2 border-black group hover:bg-zinc-50 transition-colors">
+                <div className="w-full md:w-1/3 p-6 border-b-2 md:border-b-0 md:border-r-2 border-black bg-zinc-100 flex items-center">
+                  <span className="font-bold text-sm tracking-widest uppercase">AI / ML & TOOLS</span>
+                </div>
+                <div className="w-full md:w-2/3 p-6 font-medium text-sm md:text-base leading-relaxed">
+                  Generative AI <span className="text-zinc-400 mx-2">|</span> Neural Networks <span className="text-zinc-400 mx-2">|</span> Tensorflow <span className="text-zinc-400 mx-2">|</span> Jupyter Notebook <span className="text-zinc-400 mx-2">|</span> Git <span className="text-zinc-400 mx-2">|</span> API Integration
+                </div>
+              </div>
+              <div className="flex flex-col md:flex-row group hover:bg-zinc-50 transition-colors">
+                <div className="w-full md:w-1/3 p-6 border-b-2 md:border-b-0 md:border-r-2 border-black bg-zinc-100 flex items-center">
+                  <span className="font-bold text-sm tracking-widest uppercase">CORE & SOFT SKILLS</span>
+                </div>
+                <div className="w-full md:w-2/3 p-6 font-medium text-sm md:text-base leading-relaxed">
+                  DSA <span className="text-zinc-400 mx-2">|</span> DBMS <span className="text-zinc-400 mx-2">|</span> CN <span className="text-zinc-400 mx-2">|</span> OOPS <span className="text-zinc-400 mx-2">|</span> Operating Systems <span className="text-zinc-400 mx-2">|</span> System Design 
+                </div>
+              </div>
+            </div>
+            <div className="h-2 bg-black w-full"></div>
+          </div>
+        </div>
+      )}
+
+      {/* proj summ madal */}
+      {isProjectsOpen && (
+        <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/20 backdrop-blur-sm p-4">
+ 
+          <div className="bg-white border-2 border-dashed border-black w-full max-w-5xl shadow-[15px_15px_0px_0px_rgba(0,0,0,1)] relative animate-fadeIn font-mono flex flex-col max-h-[85vh]">
+
+            <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-48 h-10 bg-zinc-200/80 backdrop-blur-sm rotate-1 shadow-sm border border-black/20 z-50"></div>
+
+            <div className="bg-black text-white p-4 flex justify-between items-center border-b-2 border-black shrink-0">
+              <h2 className="text-xl md:text-2xl font-black tracking-tighter">
+                PROJECT SUMMARY (project details on page 3)
+              </h2>
+              <button 
+                onClick={() => setIsProjectsOpen(false)}
+                className="text-white hover:text-gray-700 font-bold text-xl tracking-widest"
+              >
+                [ CLOSE ]
+              </button>
+            </div>
+
+            <div className="flex-col overflow-y-auto">
+              {projectSummary.map((project, idx) => (
+                <div key={project.id} className={`flex flex-col md:flex-row border-b-2 border-black group hover:bg-zinc-50 transition-colors ${idx === projectSummary.length - 1 ? 'border-b-0' : ''}`}>
+                  
+                  <div className="w-full md:w-1/3 p-4 md:p-6 border-b-2 md:border-b-0 md:border-r-2 border-black bg-zinc-100 flex flex-col justify-center">
+                    <span className="text-xs text-zinc-500 font-bold tracking-widest mb-1">{project.id} // {project.type}</span>
+                    <h3 className="text-xl font-black uppercase tracking-tight mb-2">{project.name}</h3>
+                    <div className="flex gap-2 text-[10px] font-bold tracking-wider">
+                      <span className="bg-black text-white px-2 py-1">{project.status}</span>
+                      <span className="border border-black px-2 py-1">{project.year}</span>
+                    </div>
+                  </div>
+
+                  <div className="w-full md:w-2/3 p-4 md:p-6 flex items-center">
+                    <p className="font-medium text-sm md:text-base leading-relaxed text-zinc-800">
+                      {project.desc}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            <div className="h-2 bg-black w-full shrink-0"></div>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 };
