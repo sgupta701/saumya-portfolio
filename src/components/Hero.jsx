@@ -176,20 +176,20 @@ const Hero = () => {
           <div className="flex flex-col min-h-screen font-mono text-black overflow-y-auto overflow-x-hidden bg-grid-subtle">
 
             {/* summary */}
-            <div className="w-full text-center mt-12 mb-2">
+            <div className="w-full text-center mt-12 mb-6">
               <h2 className="text-4xl font-black leading-none mb-4 uppercase italic">
                 CRAFTING <br /> DIGITAL <br /> 
-                <div className="mt-2 scale-90">
+                <div className="mt-4 scale-90">
                   <KineticText />
                 </div>
               </h2>
-              <p className="text-md text-gray-500 font-medium leading-relaxed border-l-4 border-black pl-4 text-left mx-auto max-w-[300px]">
+              <p className="text-md mt-6 text-gray-500 font-medium leading-relaxed border-l-4 border-black pl-4 text-left mx-auto max-w-[300px]">
                 I build systems that learn and interfaces that feel alive. Currently focusing on AI/ML and full-stack architecture.
               </p>
             </div>
 
             {/* img */}
-            <div className="w-full flex justify-center items-center my-2"> 
+            <div className="w-full flex justify-center items-center my-5"> 
               <div className="w-[200px] h-[200px] relative">
   
                 <div className="absolute inset-0 bg-black rounded-full translate-x-2 translate-y-2 -z-10 opacity-20 blur-sm"></div>
@@ -203,7 +203,7 @@ const Hero = () => {
             </div>
 
             {/* details */}
-            <div className="mt-6 text-xs font-bold opacity-60 flex flex-col gap-1 text-center">
+            <div className="mt-8 text-xs font-bold opacity-60 flex flex-col gap-1 text-center">
               <span>B.Tech (CSE) • Final Year Undergrad</span>
               <span>Bareilly, India</span>
             </div>
