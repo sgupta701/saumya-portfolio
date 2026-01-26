@@ -1,7 +1,10 @@
-Welcome to my Personal portfolio...
+holaa!!! welcome to my portfolio... ✌️
 
-I focused on a responsive and clean-frontend in order to demonstrate my projects and skills.. 
+A responsive and clean-frontend was my main focus in order to demonstrate both - my projects and skills.. 
 
-I also included the chronology of my journey- including my education, achievements, hackathons and internships; in the desktop version of this portfolio. 
+if u're on a desktop, u’ll see a timeline of my journey so far. including my education, achievements, hackathons i participated in and the internships i did..  i’ve also highlighted some of my favorite projects there, but you can find the rest right here on my GitHub.. feel free to explore!
 
-link: https://saumyagupta-portfolio.netlify.app/
+If you like the vibe, or the code.. drop a ⭐ 
+It really helps!
+
+Check it out here: saumyagupta-portfolio.netlify.app
