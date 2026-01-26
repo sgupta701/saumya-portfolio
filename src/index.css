@@ -21,6 +21,12 @@ a, button {
   cursor: none; 
 }
 
+@media (max-width: 1024px) {
+  .cursor {
+    display: none !important;
+  }
+}
+
 * {
   cursor: none !important;
 }

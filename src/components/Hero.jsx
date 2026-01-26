@@ -163,7 +163,7 @@ const Hero = () => {
       {isMobile ? (
         /* mobile */
         <div className="flex flex-col min-h-screen font-mono text-black overflow-y-auto overflow-x-hidden">
-          {/* mobile nav */}
+          {/* mobilenav */}
           <nav className="w-full border-b-2 border-black flex justify-around items-center h-[10vh] font-bold text-[10px] tracking-widest bg-white sticky top-0 z-[100]">
             <button onClick={() => setIsProjectsOpen(true)}>PROJECTS SUMMARY</button>
             <button onClick={() => setIsSkillsOpen(true)}>SKILLS</button>
