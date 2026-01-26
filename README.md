@@ -9,4 +9,8 @@ if u're on a desktop, u’ll come across a timeline of my journey so far. includ
 If you like the vibe, or the code.. drop a ⭐ 
 It really helps!
 
-Check it out here: saumyagupta-portfolio.netlify.app
+
+check it out here
+https://saumyagupta-portfolio.netlify.app/
+
+ 
