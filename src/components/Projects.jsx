@@ -410,7 +410,7 @@ const Projects = () => {
               <div className="absolute bottom-0 right-10 pointer-events-none z-0"><span className="text-[11vw] font-black text-zinc-900 opacity-50 uppercase tracking-tighter">04</span></div>
             </div>
 
-            {/* scr 6 - .NET */}
+            {/* scr 6  chatapp.NET */}
             <div className="w-screen h-full flex-shrink-0 flex justify-center items-center bg-black text-white border-r-2 border-zinc-800 relative p-10 bg-grid-dark">
               <div className="w-5xl h-[80vh] border-2 border-zinc-700 p-8 md:p-16 relative bg-zinc-900/50 backdrop-blur-sm shadow-[20px_20px_0px_0px_rgba(39,39,42,1)] z-10 flex flex-col justify-center">
                 <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-zinc-500"></div>
@@ -418,7 +418,7 @@ const Projects = () => {
                 <div className="flex justify-between items-end mb-12 border-b border-zinc-800 pb-8">
                   <div>
                     <span className="text-zinc-500 font-mono text-sm mb-2 block tracking-widest uppercase">05 // .NET</span>
-                    <h3 className="text-6xl md:text-8xl font-black tracking-tighter leading-tight">Real Time Chat App</h3>
+                    <h3 className="text-6xl md:text-7xl font-black tracking-tighter leading-tight">RealTime ChatApp</h3>
                   </div>
                   <div className="text-right hidden md:block font-mono text-zinc-500 text-xs tracking-widest">
                     <p>STATUS: [COMPLETED]</p><p>YEAR: 2025</p>
@@ -427,7 +427,7 @@ const Projects = () => {
                 <div className="flex flex-col md:flex-row gap-12 items-start">
                   <div className="flex-grow">
                     <p className="text-2xl md:text-3xl text-zinc-100 font-bold mb-8 uppercase italic leading-tight">ChatApp - A Real-Time Chat System <br /> (TCP + WPF GUI)</p>
-                    <p className="text-base md:text-lg text-zinc-400 font-mono leading-relaxed max-w-xl">Lightweight chat system supporting multiple users instantly with WPF-based GUI.</p>
+                    <p className="text-base md:text-lg text-zinc-400 font-mono leading-relaxed max-w-xl">A lightweight chat system supporting multiple users connecting to the same server and exchanging messages instantly; including a TCP server, client, login authentication and a WPF-based GUI for user interaction.</p>
                   </div>
                   <div className="flex flex-col gap-4 justify-end items-start min-w-[220px] pt-4">
                     <div className="relative group/tech">
