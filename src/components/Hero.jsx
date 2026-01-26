@@ -84,7 +84,7 @@ const milestones = [
   { id: 'cp13a', title: "Vishleshan, IIM Raipur", detail: "Presented FinTech market analysis at IIM Raipur’s Vishleshan, 2024, secured AIR 2", size: "small", x: "29%", y: "50%" },
   { id: 'cp13b', title: "Kaizen, IIM Rohtak", detail: "AIR - 2. Supply Chain Optimization presentation.", size: "small", x: "21%", y: "50%" },
   { id: 'y2025', year: "2025", size: "large", x: "13%", y: "50%" },
-  { id: 'cp14', title: "Research Paper Presentation", detail: "Decentralized Machine Unlearning System", size: "small", x: "10%", y: "60%" },
+  { id: 'cp14', title: "Research Paper Presentation", detail: "Presented Research paper at Techvyom, 2025 at SRMSCET. Decentralized Machine Unlearning and Federated System using Blockchain", size: "small", x: "10%", y: "60%" },
   { id: 'cp15', title: "Saiket Systems, Internship", detail: "Machine Learning Intern at Saiket Systems", size: "small", x: "10%", y: "72%" },
   { id: 'cp16', title: "IBM, Internship", detail: "GenAI Intern at IBM (PBEL)", size: "small", x: "13%", y: "80%" },
   { id: 'cp17', title: "Infosys Springboard, Internship", detail: "Artificial Intelligence Intern at Infosys Springboard", size: "small", x: "23%", y: "80%" },
