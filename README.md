@@ -13,4 +13,9 @@ It really helps!
 check it out here
 https://saumyagupta-portfolio.netlify.app/
 
+here's a quick look
+<p align="center">
+  <img src="src/assets/ui-portfolio.png" alt="Portfolio ui"/>
+</p>
+
  
