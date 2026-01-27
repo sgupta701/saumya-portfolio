@@ -178,7 +178,7 @@ const Projects = () => {
           />
 
           <MobileProjectCard 
-            num="05" title="Real time Chatapp" subtitle=".NET" dark={true}
+            num="05" title="Thread - A Real time Chatapp" subtitle=".NET" dark={true}
             displayImg={displayrealtimechatbot} github="https://github.com/sgupta701/Real-Time-Chatapp-using-.NET"
             /* workflowSetter={setIsRealTimeChatbotWorkflowOpen} */
             desc={{short: "Real-Time Chat System using .NET (TCP + WPF)", long: "A lightweight chat system supporting multiple users connecting to the same server and exchanging messages instantly; including a TCP server, client, login authentication and a WPF-based GUI for user interaction."}}
@@ -418,7 +418,7 @@ const Projects = () => {
                 <div className="flex justify-between items-end mb-12 border-b border-zinc-800 pb-8">
                   <div>
                     <span className="text-zinc-500 font-mono text-sm mb-2 block tracking-widest uppercase">05 // .NET</span>
-                    <h3 className="text-6xl md:text-7xl font-black tracking-tighter leading-tight">RealTime ChatApp</h3>
+                    <h3 className="text-6xl md:text-7xl font-black tracking-tighter leading-tight">Thread - A RealTime ChatApp using .NET</h3>
                   </div>
                   <div className="text-right hidden md:block font-mono text-zinc-500 text-xs tracking-widest">
                     <p>STATUS: [COMPLETED]</p><p>YEAR: 2025</p>
@@ -426,7 +426,7 @@ const Projects = () => {
                 </div>
                 <div className="flex flex-col md:flex-row gap-12 items-start">
                   <div className="flex-grow">
-                    <p className="text-2xl md:text-3xl text-zinc-100 font-bold mb-8 uppercase italic leading-tight">ChatApp - A Real-Time Chat System <br /> (TCP + WPF GUI)</p>
+                    <p className="text-2xl md:text-3xl text-zinc-100 font-bold mb-8 uppercase italic leading-tight">Real-Time Chat System (TCP + WPF GUI)</p>
                     <p className="text-base md:text-lg text-zinc-400 font-mono leading-relaxed max-w-xl">A lightweight chat system supporting multiple users connecting to the same server and exchanging messages instantly; including a TCP server, client, login authentication and a WPF-based GUI for user interaction.</p>
                   </div>
                   <div className="flex flex-col gap-4 justify-end items-start min-w-[220px] pt-4">

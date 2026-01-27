@@ -97,7 +97,7 @@ const projectSummary = [
   { id: '02', name: 'ArcLens', status: '[ONGOING]', year: '2026', type: 'FULL STACK + ML', desc: 'Unified Document Intelligence & Routing System. Uses OCR and deep learning to extract, classify, summarize and route documents automatically.' },
   { id: '03', name: 'GlyphIO', status: '[COMPLETED]', year: '2025', type: 'AI/ML', desc: 'American Sign Language [ASL] based Gesture Controller & Chat System. Converts ASL alphabets directly into text for seamless chatting.' },
   { id: '04', name: 'VertaAI', status: '[COMPLETED]', year: '2025', type: 'ML + Frontend', desc: 'A Multi Language Translator. Full-stack AI-powered web app for real-time multilingual text translation using Hugging Face’s MBART transformer model.' },
-  { id: '05', name: 'ChatApp .NET', status: '[COMPLETED]', year: '2025', type: '.NET / TCP', desc: 'Real-Time Chat System (TCP + WPF GUI). Lightweight chat system supporting multiple users via TCP server, client, and login authentication.' },
+  { id: '05', name: 'Thread - ChatApp .NET', status: '[COMPLETED]', year: '2025', type: '.NET / TCP', desc: 'Real-Time Chat System (TCP + WPF GUI). Lightweight chat system supporting multiple users via TCP server, client, and login authentication.' },
   { id: '06', name: 'Portfolio', status: '[DEPLOYED]', year: '2026', type: 'React', desc: 'Personal Portfolio & Project Archive. Designed with a focus on a clean frontend and brutalist aesthetic.' },
 ];
 
