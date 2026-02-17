@@ -15,7 +15,7 @@ https://saumyagupta-portfolio.netlify.app/
 
 here's a quick look
 <p align="center">
-  <img src="src/assets/ui-portfolio.png" alt="Portfolio ui"/>
+  <img src="src/assets/portfolio-ui.png" alt="Portfolio ui"/>
 </p>
 
  
