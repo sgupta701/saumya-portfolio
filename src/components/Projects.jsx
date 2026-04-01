@@ -10,16 +10,21 @@ import dotteddown from '../assets/dotted-down.png';
 
 import neuraworkflow from '../assets/neuraworkflow.png';
 import displayneura from '../assets/displayneura.png';
+
 import displayarclens from '../assets/displayarclens.png';
 import arclensworkflow from '../assets/arclensworkflow.png';
+
 import displayglyphio from '../assets/displayglyphio.png';
 
 import displayvertaai from '../assets/displayvertaai.png';
 import vertaaiworkflow from '../assets/vertaaiworkflow.png';
+
 import displayrealtimechatbot from '../assets/displayrealtimechatbot.png';
 
 import displayportfolio from '../assets/displayportfolio.png';
 import displayphoneportfolio from '../assets/displayphoneportfolio.png';
+
+import displayswytch from '../assets/displayswytch.png';
 
 const Doodle = ({ src, x, y, rotate = 0, scale = 1, opacity = 0.5, width = "100px", innerRef }) => (
   <img 
@@ -48,6 +53,7 @@ const Projects = () => {
   const [isGlyphIOWorkflowOpen, setIsGlyphIOWorkflowOpen] = useState(false);
   const [isVertaAIWorkflowOpen, setIsVertaAIWorkflowOpen] = useState(false);
   const [isRealTimeChatbotWorkflowOpen, setIsRealTimeChatbotWorkflowOpen] = useState(false);
+  const [isSwytchWorkflowOpen, setIsSwytchWorkflowOpen] = useState(false);
 
   const [isMobile, setIsMobile] = useState(false);
   const [activeMobileStack, setActiveMobileStack] = useState(null); // To track which project stack is clicked on mobile
@@ -89,7 +95,8 @@ const Projects = () => {
   }, [isMobile]);
 
   // mobile project
-  const MobileProjectCard = ({ num, title, subtitle, desc, stack, displayImg, github, demo, workflow, workflowSetter, dark = false }) => (
+  // mobile project
+  const MobileProjectCard = ({ num, title, subtitle, desc, stack, displayImg, github, demo, workflowSetter, livelink, dark = false }) => (
     <div className={`w-full py-16 px-6 border-b-2 border-black flex flex-col ${dark ? 'bg-black text-white' : 'bg-white text-black'}`}>
       <span className={`font-mono text-xs mb-2 tracking-widest uppercase ${dark ? 'text-zinc-500' : 'text-zinc-500'}`}>
         {num} // {subtitle}
@@ -107,12 +114,22 @@ const Projects = () => {
           [ {activeMobileStack === title ? 'CLOSE_TECH' : 'TECH_STACK'} ]
         </button>
         
-        <button 
-          onClick={() => workflowSetter(true)}
-          className={`border-b-2 font-bold uppercase tracking-widest text-sm pb-1 ${dark ? 'border-zinc-700 text-zinc-400' : 'border-zinc-200 text-zinc-600'}`}
-        >
-          [ WORKFLOW ]
-        </button>
+        {/* Conditionally render WORKFLOW only if workflowSetter exists */}
+        {workflowSetter && (
+          <button 
+            onClick={() => workflowSetter(true)}
+            className={`border-b-2 font-bold uppercase tracking-widest text-sm pb-1 ${dark ? 'border-zinc-700 text-zinc-400' : 'border-zinc-200 text-zinc-600'}`}
+          >
+            [ WORKFLOW ]
+          </button>
+        )}
+
+        {/* Conditionally render LIVE LINK only if livelink exists */}
+        {livelink && (
+          <a href={livelink} target="_blank" rel="noreferrer" className={`border-b-2 font-bold uppercase tracking-widest text-sm pb-1 ${dark ? 'border-zinc-700 text-zinc-400' : 'border-zinc-200 text-zinc-600'}`}>
+            [ LIVE LINK ]
+          </a>
+        )}
 
         {github && <a href={github} target="_blank" rel="noreferrer" className={`border-b-2 font-bold uppercase tracking-widest text-sm pb-1 ${dark ? 'border-zinc-700 text-zinc-400' : 'border-zinc-200 text-zinc-600'}`}>[ GITHUB ]</a>}
         {demo && <a href={demo} target="_blank" rel="noreferrer" className={`border-b-2 font-bold uppercase tracking-widest text-sm pb-1 ${dark ? 'border-zinc-700 text-zinc-400' : 'border-zinc-200 text-zinc-600'}`}>[ DEMO ]</a>}
@@ -129,7 +146,7 @@ const Projects = () => {
 
       {/* static display */}
       <div className="mt-10 border-2 border-black">
-        <img src={displayImg} className="w-full grayscale" alt="preview" />
+        <img src={displayImg} className="w-full" alt="preview" />
       </div>
     </div>
   );
@@ -170,17 +187,17 @@ const Projects = () => {
           />
 
           <MobileProjectCard 
-            num="04" title="VertaAI" subtitle="ML + FRONTEND" dark={false}
-            displayImg={displayvertaai} github="https://github.com/sgupta701/Verta-AI"
-            workflowSetter={setIsVertaAIWorkflowOpen}
-            desc={{short: "A Multi Language Translator", long: "full-stack AI-powered web app for real-time multilingual text translation using Hugging Face’s MBART transformer model.."}}
-            stack={["Python", "Streamlit", "BART-large", "Hugging Face"]}
+            num="04" title="swytch.sh" subtitle="React, Socket.io" dark={false}
+            displayImg={displayswytch} github="https://github.com/sgupta701/SWYTCH.SH_a_tag_team_pictionary"
+            livelink="https://swytch-sh-app.onrender.com/"
+            demo="https://drive.google.com/file/d/13nes1ccvFgGopksQT2okGlfi8Kqg0goJ/view?usp=drivesdk"
+            desc={{short: "A tag team pictionary game", long: "a multiplayer drawing game where 2 artists collaborate in 20-second swytches to illustrate a secret word. It features real-time canvas synchronization, dynamic letter reveals, and a competitive scoring system."}}
+            stack={["React", "Node.js", "Socket.io"]}
           />
 
           <MobileProjectCard 
             num="05" title="Thread - A Real time Chatapp" subtitle=".NET" dark={true}
             displayImg={displayrealtimechatbot} github="https://github.com/sgupta701/Real-Time-Chatapp-using-.NET"
-            /* workflowSetter={setIsRealTimeChatbotWorkflowOpen} */
             desc={{short: "Real-Time Chat System using .NET (TCP + WPF)", long: "A lightweight chat system supporting multiple users connecting to the same server and exchanging messages instantly; including a TCP server, client, login authentication and a WPF-based GUI for user interaction."}}
             stack={["C#", ".NET", "WPF", "TCP Sockets", "SQL Server"]}
           />
@@ -188,15 +205,24 @@ const Projects = () => {
           <MobileProjectCard 
             num="06" title="My Portfolio" subtitle="React" dark={false}
             displayImg={displayphoneportfolio} github="https://github.com/sgupta701/saumya-portfolio"
-            /* workflowSetter={setIsRealTimeChatbotWorkflowOpen} */
+            livelink="https://saumyagupta-portfolio.netlify.app/"
             desc={{short: "Personal Portfolio and Project Archive", long: "the very project you are currently exploring.. made it with a focus on reponsiveness and a clean frontend.. Built using React, Tailwind CSS, and GSAP for smooth animations and interactions."}}
             stack={["React", "Tailwind CSS", "GSAP", "JavaScript"]}
           />
+
+          <MobileProjectCard 
+            num="07" title="VertaAI" subtitle="ML + FRONTEND" dark={true}
+            displayImg={displayvertaai} github="https://github.com/sgupta701/Verta-AI"
+            workflowSetter={setIsVertaAIWorkflowOpen}
+            desc={{short: "A Multi Language Translator", long: "full-stack AI-powered web app for real-time multilingual text translation using Hugging Face’s MBART transformer model.."}}
+            stack={["Python", "Streamlit", "BART-large", "Hugging Face"]}
+          />
+          
         </div>
       ) : (
         /* desktop */
         <div ref={triggerRef}>
-          <div ref={sectionRef} className="h-screen w-[600vw] flex flex-row relative">
+          <div ref={sectionRef} className="h-screen w-[800vw] flex flex-row relative">
 
             {/* scr 1 */}
             <div className="w-screen h-full flex-shrink-0 justify-start pt-42 bg-white bg-grid-subtle overflow-hidden border-r-2 border-black relative px-12 md:px-24">           
@@ -263,7 +289,7 @@ const Projects = () => {
                     <div className="relative group/img">
                       <button className="text-zinc-400 border-b-2 border-zinc-700 pb-1 hover:text-white hover:border-white transition-all text-xl font-bold uppercase tracking-widest">[ DISPLAY ]</button>
                       <div className="absolute bottom-full left-0 mb-6 w-120 border-2 border-zinc-100 opacity-0 group-hover/img:opacity-100 transition-all pointer-events-none z-50">
-                        <img src={displayneura} className="w-full h-auto grayscale hover:grayscale-0" alt="preview" />
+                        <img src={displayneura} className="w-full h-auto" alt="preview" />
                       </div>
                     </div>
                     <div className="relative group/img">
@@ -288,7 +314,7 @@ const Projects = () => {
                 <div className="flex justify-between items-end mb-12 border-b border-zinc-200 pb-8">
                   <div>
                     <span className="text-zinc-500 font-mono text-sm mb-2 block tracking-widest uppercase">02 // FULL STACK + ML</span>
-                    <h3 className="text-6xl md:text-8xl font-black tracking-tighter">ArcLens</h3>
+                    <h3 className="text-6xl md:text-8xl font-black tracking-tighter">Doclytic</h3>
                   </div>
                   <div className="text-right hidden md:block font-mono text-zinc-500 text-xs tracking-widest">
                     <p>STATUS: [ONGOING]</p><p>YEAR: 2026</p>
@@ -296,7 +322,7 @@ const Projects = () => {
                 </div>
                 <div className="flex flex-col md:flex-row gap-12 items-start">
                   <div className="flex-grow">
-                    <p className="text-2xl md:text-3xl text-black font-bold mb-8 uppercase italic leading-tight">Unified Document Intelligence <br /> & Routing System.</p>
+                    <p className="text-2xl md:text-3xl text-black font-bold mb-8 uppercase italic leading-tight">A Unified Document Intelligence <br /> & Routing System.</p>
                     <p className="text-base md:text-lg text-zinc-600 font-mono leading-relaxed max-w-xl">It is a doc intelligence system that uses OCR and deep learning to extract, classify, summarize and route documents automatically to relevant departments, improving efficiency and accuracy in handling large volumes of paperwork.</p>
                   </div>
                   <div className="flex flex-col gap-4 justify-end items-start min-w-[220px] pt-4">
@@ -311,7 +337,7 @@ const Projects = () => {
                     <div className="relative group/img">
                       <button className="text-zinc-600 border-b-2 border-zinc-200 pb-1 hover:text-black text-xl font-bold uppercase tracking-widest">[ DISPLAY ]</button>
                       <div className="absolute bottom-full left-0 mb-6 w-120 border-2 border-black opacity-0 group-hover/img:opacity-100 transition-all pointer-events-none z-50">
-                        <img src={displayarclens} className="w-full grayscale hover:grayscale-0" alt="preview" />
+                        <img src={displayarclens} className="w-full" alt="preview" />
                       </div>
                     </div>
                     <div className="relative group/img">
@@ -320,7 +346,7 @@ const Projects = () => {
                         <img src={arclensworkflow} className="w-full grayscale" alt="workflow" />
                       </div>
                     </div>
-                    <a href="https://github.com/sgupta701/ArcLens" target="_blank" rel="noreferrer" className="text-zinc-600 border-b-2 border-zinc-200 uppercase text-xl font-bold tracking-widest">[ GITHUB ]</a>
+                    <a href="https://github.com/sgupta701/Doclytic_a_unified_doc_intelligence_system" target="_blank" rel="noreferrer" className="text-zinc-600 border-b-2 border-zinc-200 uppercase text-xl font-bold tracking-widest">[ GITHUB ]</a>
                   </div>
                 </div>
               </div>
@@ -358,7 +384,7 @@ const Projects = () => {
                     <div className="relative group/img">
                       <button className="text-zinc-400 border-b-2 border-zinc-700 pb-1 hover:text-white text-xl font-bold uppercase tracking-widest">[ DISPLAY ]</button>
                       <div className="absolute bottom-full left-0 mb-6 w-120 border-2 border-zinc-100 opacity-0 group-hover/img:opacity-100 transition-all pointer-events-none z-50">
-                        <img src={displayglyphio} className="w-full grayscale hover:grayscale-0" alt="preview" />
+                        <img src={displayglyphio} className="w-full" alt="preview" />
                       </div>
                     </div>
                     <a href="https://github.com/sgupta701/GlyphIO_amongus_hand_control" target="_blank" rel="noreferrer" className="text-zinc-400 border-b-2 border-zinc-700 uppercase text-xl font-bold tracking-widest">[ GITHUB ]</a>
@@ -369,41 +395,45 @@ const Projects = () => {
               <div className="absolute bottom-0 right-10 pointer-events-none z-0"><span className="text-[11vw] font-black text-zinc-900 opacity-90 uppercase tracking-tighter">03</span></div>
             </div>
 
-            {/* scr 5 VertaAI */}
+             {/* scr 4 - swytch.sh */}
             <div className="w-screen h-full flex-shrink-0 flex justify-center items-center bg-white text-black border-r-2 border-zinc-200 relative p-10 bg-grid-subtle">
               <div className="w-5xl h-[70vh] border-2 border-black p-8 md:p-16 relative bg-white/80 backdrop-blur-sm shadow-[20px_20px_0px_0px_rgba(0,0,0,1)] z-10 flex flex-col justify-center">
                 <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-black"></div>
                 <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-black"></div>
                 <div className="flex justify-between items-end mb-12 border-b border-zinc-200 pb-8">
                   <div>
-                    <span className="text-zinc-500 font-mono text-sm mb-2 block tracking-widest uppercase">04 // ML + Frontend</span>
-                    <h3 className="text-6xl md:text-8xl font-black tracking-tighter">VertaAI</h3>
+                    <span className="text-zinc-500 font-mono text-sm mb-2 block tracking-widest uppercase">04 // React + Socket.io</span>
+                    <h3 className="text-6xl md:text-8xl font-black tracking-tighter">swytch.sh</h3>
                   </div>
                   <div className="text-right hidden md:block font-mono text-zinc-500 text-xs tracking-widest">
-                    <p>STATUS: [COMPLETED]</p><p>YEAR: 2025</p>
+                    <p>STATUS: [COMPLETED]</p><p>YEAR: 2026</p>
                   </div>
                 </div>
                 <div className="flex flex-col md:flex-row gap-12 items-start">
                   <div className="flex-grow">
-                    <p className="text-2xl md:text-3xl text-black font-bold mb-8 uppercase italic leading-tight">A Multi Language Translator</p>
-                    <p className="text-base md:text-lg text-zinc-600 font-mono leading-relaxed max-w-xl">full-stack AI-powered web app for real-time multilingual text translation using Hugging Face’s MBART transformer model..</p>
+                    <p className="text-2xl md:text-3xl text-black font-bold mb-8 uppercase italic">A tag team pictionary game</p>
+                    <p className="text-base md:text-lg text-zinc-600 font-mono leading-relaxed max-w-xl">
+                      a multiplayer drawing game where 2 artists collaborate in 20-second swytches to illustrate a secret word. It features real-time canvas synchronization, dynamic letter reveals, and a competitive scoring system.
+                    </p>
                   </div>
                   <div className="flex flex-col gap-4 justify-end items-start min-w-[220px] pt-4">
+                    <a href="https://swytch-sh-app.onrender.com/" target="_blank" rel="noreferrer" className="text-zinc-600 border-b-2 border-zinc-200 uppercase text-xl font-bold tracking-widest hover:text-black">[ LIVE LINK ]</a>
                     <div className="relative group/tech">
                       <button className="text-zinc-600 border-b-2 border-zinc-200 pb-1 hover:text-black transition-all text-xl font-bold uppercase tracking-widest">[ TECH_STACK ]</button>
                       <div className="absolute bottom-full left-0 mb-6 w-64 bg-black border-2 border-black p-4 opacity-0 group-hover/tech:opacity-100 transition-all pointer-events-none z-50 shadow-2xl">
                         <ul className="text-xs font-mono space-y-2 text-white">
-                          <li>&gt; Python</li><li>&gt; Streamlit</li><li>&gt; BART-large</li><li>&gt; Hugging Face</li>
+                          <li>&gt; React</li><li>&gt; Node.js</li><li>&gt; Socket.io</li>
                         </ul>
                       </div>
                     </div>
                     <div className="relative group/img">
                       <button className="text-zinc-600 border-b-2 border-zinc-200 pb-1 hover:text-black text-xl font-bold uppercase tracking-widest">[ DISPLAY ]</button>
                       <div className="absolute bottom-full left-0 mb-6 w-120 border-2 border-black opacity-0 group-hover/img:opacity-100 transition-all pointer-events-none z-50">
-                        <img src={displayvertaai} className="w-full grayscale hover:grayscale-0" alt="preview" />
+                        <img src={displayswytch} className="w-full" alt="preview" />
                       </div>
                     </div>
-                    <a href="https://github.com/sgupta701/Verta-AI" target="_blank" rel="noreferrer" className="text-zinc-600 border-b-2 border-zinc-200 uppercase text-xl font-bold tracking-widest">[ GITHUB ]</a>
+                    <a href="https://github.com/sgupta701/SWYTCH.SH_a_tag_team_pictionary" target="_blank" rel="noreferrer" className="text-zinc-600 border-b-2 border-zinc-200 uppercase text-xl font-bold tracking-widest hover:text-black">[ GITHUB ]</a>
+                    <a href="https://drive.google.com/file/d/13nes1ccvFgGopksQT2okGlfi8Kqg0goJ/view?usp=drivesdk" target="_blank" rel="noreferrer" className="text-zinc-600 border-b-2 border-zinc-200 uppercase text-xl font-bold tracking-widest">[ WATCH_DEMO ]</a>
                   </div>
                 </div>
               </div>
@@ -441,7 +471,7 @@ const Projects = () => {
                     <div className="relative group/img">
                       <button className="text-zinc-400 border-b-2 border-zinc-700 pb-1 hover:text-white text-xl font-bold uppercase tracking-widest">[ DISPLAY ]</button>
                       <div className="absolute bottom-full left-0 mb-6 w-120 border-2 border-zinc-100 opacity-0 group-hover/img:opacity-100 transition-all pointer-events-none z-50 shadow-2xl">
-                        <img src={displayrealtimechatbot} className="w-full grayscale hover:grayscale-0" alt="preview" />
+                        <img src={displayrealtimechatbot} className="w-full" alt="preview" />
                       </div>
                     </div>
                     <a href="https://github.com/sgupta701/Real-Time-Chatapp-using-.NET" target="_blank" rel="noreferrer" className="text-zinc-400 border-b-2 border-zinc-700 uppercase text-xl font-bold tracking-widest">[ GITHUB ]</a>
@@ -483,15 +513,58 @@ const Projects = () => {
                     <div className="relative group/img">
                       <button className="text-zinc-600 border-b-2 border-zinc-200 pb-1 hover:text-black text-xl font-bold uppercase tracking-widest">[ DISPLAY ]</button>
                       <div className="absolute bottom-full left-0 mb-6 w-120 border-2 border-black opacity-0 group-hover/img:opacity-100 transition-all pointer-events-none z-50">
-                        <img src={displayportfolio} className="w-full grayscale hover:grayscale-0" alt="preview" />
+                        <img src={displayportfolio} className="w-full" alt="preview" />
                       </div>
                     </div>
+                    <a href="https://saumyagupta-portfolio.netlify.app/" target="_blank" rel="noreferrer" className="text-zinc-600 border-b-2 border-zinc-200 uppercase text-xl font-bold tracking-widest">[ LIVE LINK ]</a>
                     <a href="https://github.com/sgupta701/saumya-portfolio" target="_blank" rel="noreferrer" className="text-zinc-600 border-b-2 border-zinc-200 uppercase text-xl font-bold tracking-widest">[ GITHUB ]</a>
                   </div>
                 </div>
               </div>
               <div className="absolute bottom-0 right-10 pointer-events-none z-0"><span className="text-[11vw] font-black text-zinc-900 opacity-50 uppercase tracking-tighter">06</span></div>
             </div>
+
+           {/* scr 7 - VertaAI */}
+            <div className="w-screen h-full flex-shrink-0 flex justify-center items-center bg-black text-white border-r-2 border-zinc-800 relative p-10 bg-grid-dark">
+              <div className="w-5xl h-[70vh] border-2 border-zinc-700 p-8 md:p-16 relative bg-zinc-900/50 backdrop-blur-sm shadow-[20px_20px_0px_0px_rgba(39,39,42,1)] z-10 flex flex-col justify-center">
+                <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-zinc-500"></div>
+                <div className="absolute bottom-0 right-0 w-6 h-6 border-b-2 border-r-2 border-zinc-500"></div>
+                <div className="flex justify-between items-end mb-12 border-b border-zinc-800 pb-8">
+                  <div>
+                    <span className="text-zinc-500 font-mono text-sm mb-2 block tracking-widest uppercase">07 // ML + Frontend</span>
+                    <h3 className="text-6xl md:text-8xl font-black tracking-tighter">VertaAI</h3>
+                  </div>
+                  <div className="text-right hidden md:block font-mono text-zinc-500 text-xs tracking-widest">
+                    <p>STATUS: [COMPLETED]</p><p>YEAR: 2025</p>
+                  </div>
+                </div>
+                <div className="flex flex-col md:flex-row gap-12 items-start">
+                  <div className="flex-grow">
+                    <p className="text-2xl md:text-3xl text-zinc-100 font-bold mb-8 uppercase italic leading-tight">A Multi Language Translator</p>
+                    <p className="text-base md:text-lg text-zinc-400 font-mono leading-relaxed max-w-xl">full-stack AI-powered web app for real-time multilingual text translation using Hugging Face’s MBART transformer model..</p>
+                  </div>
+                  <div className="flex flex-col gap-4 justify-end items-start min-w-[220px] pt-4">
+                    <div className="relative group/tech">
+                      <button className="text-zinc-400 border-b-2 border-zinc-700 pb-1 hover:text-white transition-all text-xl font-bold uppercase tracking-widest">[ TECH_STACK ]</button>
+                      <div className="absolute bottom-full left-0 mb-6 w-64 bg-zinc-900 border-2 border-zinc-100 p-4 opacity-0 group-hover/tech:opacity-100 transition-all pointer-events-none z-50 shadow-2xl">
+                        <ul className="text-xs font-mono space-y-2 text-zinc-100">
+                          <li>&gt; Python</li><li>&gt; Streamlit</li><li>&gt; BART-large</li><li>&gt; Hugging Face</li>
+                        </ul>
+                      </div>
+                    </div>
+                    <div className="relative group/img">
+                      <button className="text-zinc-400 border-b-2 border-zinc-700 pb-1 hover:text-white text-xl font-bold uppercase tracking-widest">[ DISPLAY ]</button>
+                      <div className="absolute bottom-full left-0 mb-6 w-120 border-2 border-zinc-100 opacity-0 group-hover/img:opacity-100 transition-all pointer-events-none z-50">
+                        <img src={displayvertaai} className="w-full" alt="preview" />
+                      </div>
+                    </div>
+                    <a href="https://github.com/sgupta701/Verta-AI" target="_blank" rel="noreferrer" className="text-zinc-400 border-b-2 border-zinc-700 uppercase text-xl font-bold tracking-widest hover:text-white">[ GITHUB ]</a>
+                  </div>
+                </div>
+              </div>
+              <div className="absolute bottom-0 right-10 pointer-events-none z-0"><span className="text-[11vw] font-black text-zinc-900 opacity-90 uppercase tracking-tighter leading-none">07</span></div>
+            </div>
+
           </div>
         </div>
       )}
