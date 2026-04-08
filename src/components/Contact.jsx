@@ -107,7 +107,7 @@ const Contact = () => {
 
       <div className="absolute bottom-5 w-full text-center">
         <p className="text-zinc-700 text-[10px] uppercase tracking-[0.5em]">
-          2026 SAUMYA GUPTA
+          .....
         </p>
       </div>
 
