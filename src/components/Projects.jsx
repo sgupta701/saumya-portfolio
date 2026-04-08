@@ -11,8 +11,8 @@ import dotteddown from '../assets/dotted-down.png';
 import neuraworkflow from '../assets/neuraworkflow.png';
 import displayneura from '../assets/displayneura.png';
 
-import displayarclens from '../assets/displayarclens.png';
-import arclensworkflow from '../assets/arclensworkflow.png';
+import displayDoclytic from '../assets/displayDoclytic.png';
+import Doclyticworkflow from '../assets/Doclyticworkflow.png';
 
 import displayglyphio from '../assets/displayglyphio.png';
 
@@ -49,7 +49,7 @@ const Projects = () => {
   const sectionRef = useRef(null);
   const triggerRef = useRef(null);
   const [isNeuraWorkflowOpen, setIsNeuraWorkflowOpen] = useState(false);
-  const [isArcLensWorkflowOpen, setIsArcLensWorkflowOpen] = useState(false);
+  const [isDoclyticWorkflowOpen, setIsDoclyticWorkflowOpen] = useState(false);
   const [isGlyphIOWorkflowOpen, setIsGlyphIOWorkflowOpen] = useState(false);
   const [isVertaAIWorkflowOpen, setIsVertaAIWorkflowOpen] = useState(false);
   const [isRealTimeChatbotWorkflowOpen, setIsRealTimeChatbotWorkflowOpen] = useState(false);
@@ -57,6 +57,7 @@ const Projects = () => {
 
   const [isMobile, setIsMobile] = useState(false);
   const [activeMobileStack, setActiveMobileStack] = useState(null); // To track which project stack is clicked on mobile
+  const [selectedDisplayImg, setSelectedDisplayImg] = useState(null);
 
   useEffect(() => {
     const checkMobile = () => {
@@ -171,9 +172,9 @@ const Projects = () => {
           />
 
           <MobileProjectCard 
-            num="02" title="ArcLens" subtitle="FULL STACK + ML" dark={false}
-            displayImg={displayarclens} github="https://github.com/sgupta701/ArcLens"
-            workflowSetter={setIsArcLensWorkflowOpen}
+            num="02" title="Doclytic" subtitle="FULL STACK + ML" dark={false}
+            displayImg={displayDoclytic} github="https://github.com/sgupta701/Doclytic"
+            workflowSetter={setIsDoclyticWorkflowOpen}
             desc={{short: "Unified Document Intelligence & Routing System.", long: "It is a doc intelligence system that uses OCR and deep learning to extract, classify, summarize and route documents automatically to relevant departments, improving efficiency and accuracy in handling large volumes of paperwork."}}
             stack={["React", "Tesseract OCR", "RAG", "BART", "MySQL"]}
           />
@@ -287,7 +288,9 @@ const Projects = () => {
                       </div>
                     </div>
                     <div className="relative group/img">
-                      <button className="text-zinc-400 border-b-2 border-zinc-700 pb-1 hover:text-white hover:border-white transition-all text-xl font-bold uppercase tracking-widest">[ DISPLAY ]</button>
+                      <button 
+                      onClick={() => setSelectedDisplayImg(displayneura)}
+                      className="text-zinc-400 border-b-2 border-zinc-700 pb-1 hover:text-white hover:border-white transition-all text-xl font-bold uppercase tracking-widest">[ DISPLAY ]</button>
                       <div className="absolute bottom-full left-0 mb-6 w-120 border-2 border-zinc-100 opacity-0 group-hover/img:opacity-100 transition-all pointer-events-none z-50">
                         <img src={displayneura} className="w-full h-auto" alt="preview" />
                       </div>
@@ -306,7 +309,7 @@ const Projects = () => {
               <div className="absolute bottom-0 right-10 pointer-events-none z-0"><span className="text-[11vw] font-black text-zinc-900 leading-none opacity-90 uppercase tracking-tighter">01</span></div>
             </div>
 
-            {/* sccr 3 - arclens */}
+            {/* sccr 3 - Doclytic */}
             <div className="w-screen h-full flex-shrink-0 flex justify-center items-center bg-white text-black border-r-2 border-zinc-200 relative p-10 bg-grid-subtle">
               <div className="w-5xl h-[70vh] border-2 border-black p-8 md:p-16 relative bg-white/80 backdrop-blur-sm shadow-[20px_20px_0px_0px_rgba(0,0,0,1)] z-10 flex flex-col justify-center">
                 <div className="absolute top-0 left-0 w-6 h-6 border-t-2 border-l-2 border-black"></div>
@@ -335,15 +338,17 @@ const Projects = () => {
                       </div>
                     </div>
                     <div className="relative group/img">
-                      <button className="text-zinc-600 border-b-2 border-zinc-200 pb-1 hover:text-black text-xl font-bold uppercase tracking-widest">[ DISPLAY ]</button>
+                      <button 
+                      onClick={() => setSelectedDisplayImg(displayDoclytic)}
+                      className="text-zinc-600 border-b-2 border-zinc-200 pb-1 hover:text-black text-xl font-bold uppercase tracking-widest">[ DISPLAY ]</button>
                       <div className="absolute bottom-full left-0 mb-6 w-120 border-2 border-black opacity-0 group-hover/img:opacity-100 transition-all pointer-events-none z-50">
-                        <img src={displayarclens} className="w-full" alt="preview" />
+                        <img src={displayDoclytic} className="w-full" alt="preview" />
                       </div>
                     </div>
                     <div className="relative group/img">
-                      <button onClick={() => setIsArcLensWorkflowOpen(true)} className="text-zinc-600 border-b-2 border-zinc-200 pb-1 hover:text-black text-xl font-bold uppercase tracking-widest">[ WORKFLOW ]</button>
+                      <button onClick={() => setIsDoclyticWorkflowOpen(true)} className="text-zinc-600 border-b-2 border-zinc-200 pb-1 hover:text-black text-xl font-bold uppercase tracking-widest">[ WORKFLOW ]</button>
                       <div className="absolute bottom-full left-0 mb-6 w-56 border-2 border-black opacity-0 group-hover/img:opacity-100 transition-all pointer-events-none z-50">
-                        <img src={arclensworkflow} className="w-full grayscale" alt="workflow" />
+                        <img src={Doclyticworkflow} className="w-full grayscale" alt="workflow" />
                       </div>
                     </div>
                     <a href="https://github.com/sgupta701/Doclytic_a_unified_doc_intelligence_system" target="_blank" rel="noreferrer" className="text-zinc-600 border-b-2 border-zinc-200 uppercase text-xl font-bold tracking-widest">[ GITHUB ]</a>
@@ -382,7 +387,9 @@ const Projects = () => {
                       </div>
                     </div>
                     <div className="relative group/img">
-                      <button className="text-zinc-400 border-b-2 border-zinc-700 pb-1 hover:text-white text-xl font-bold uppercase tracking-widest">[ DISPLAY ]</button>
+                      <button 
+                      onClick={() => setSelectedDisplayImg(displayglyphio)}
+                      className="text-zinc-400 border-b-2 border-zinc-700 pb-1 hover:text-white text-xl font-bold uppercase tracking-widest">[ DISPLAY ]</button>
                       <div className="absolute bottom-full left-0 mb-6 w-120 border-2 border-zinc-100 opacity-0 group-hover/img:opacity-100 transition-all pointer-events-none z-50">
                         <img src={displayglyphio} className="w-full" alt="preview" />
                       </div>
@@ -427,7 +434,9 @@ const Projects = () => {
                       </div>
                     </div>
                     <div className="relative group/img">
-                      <button className="text-zinc-600 border-b-2 border-zinc-200 pb-1 hover:text-black text-xl font-bold uppercase tracking-widest">[ DISPLAY ]</button>
+                      <button 
+                      onClick={() => setSelectedDisplayImg(displayswytch)}
+                      className="text-zinc-600 border-b-2 border-zinc-200 pb-1 hover:text-black text-xl font-bold uppercase tracking-widest">[ DISPLAY ]</button>
                       <div className="absolute bottom-full left-0 mb-6 w-120 border-2 border-black opacity-0 group-hover/img:opacity-100 transition-all pointer-events-none z-50">
                         <img src={displayswytch} className="w-full" alt="preview" />
                       </div>
@@ -469,7 +478,9 @@ const Projects = () => {
                       </div>
                     </div>
                     <div className="relative group/img">
-                      <button className="text-zinc-400 border-b-2 border-zinc-700 pb-1 hover:text-white text-xl font-bold uppercase tracking-widest">[ DISPLAY ]</button>
+                      <button 
+                      onClick={() => setSelectedDisplayImg(displayrealtimechatbot)}
+                      className="text-zinc-400 border-b-2 border-zinc-700 pb-1 hover:text-white text-xl font-bold uppercase tracking-widest">[ DISPLAY ]</button>
                       <div className="absolute bottom-full left-0 mb-6 w-120 border-2 border-zinc-100 opacity-0 group-hover/img:opacity-100 transition-all pointer-events-none z-50 shadow-2xl">
                         <img src={displayrealtimechatbot} className="w-full" alt="preview" />
                       </div>
@@ -511,7 +522,9 @@ const Projects = () => {
                       </div>
                     </div>
                     <div className="relative group/img">
-                      <button className="text-zinc-600 border-b-2 border-zinc-200 pb-1 hover:text-black text-xl font-bold uppercase tracking-widest">[ DISPLAY ]</button>
+                      <button 
+                      onClick={() => setSelectedDisplayImg(displayportfolio)}
+                      className="text-zinc-600 border-b-2 border-zinc-200 pb-1 hover:text-black text-xl font-bold uppercase tracking-widest">[ DISPLAY ]</button>
                       <div className="absolute bottom-full left-0 mb-6 w-120 border-2 border-black opacity-0 group-hover/img:opacity-100 transition-all pointer-events-none z-50">
                         <img src={displayportfolio} className="w-full" alt="preview" />
                       </div>
@@ -553,7 +566,9 @@ const Projects = () => {
                       </div>
                     </div>
                     <div className="relative group/img">
-                      <button className="text-zinc-400 border-b-2 border-zinc-700 pb-1 hover:text-white text-xl font-bold uppercase tracking-widest">[ DISPLAY ]</button>
+                      <button 
+                      onClick={() => setSelectedDisplayImg(displayvertaai)}
+                      className="text-zinc-400 border-b-2 border-zinc-700 pb-1 hover:text-white text-xl font-bold uppercase tracking-widest">[ DISPLAY ]</button>
                       <div className="absolute bottom-full left-0 mb-6 w-120 border-2 border-zinc-100 opacity-0 group-hover/img:opacity-100 transition-all pointer-events-none z-50">
                         <img src={displayvertaai} className="w-full" alt="preview" />
                       </div>
@@ -570,6 +585,36 @@ const Projects = () => {
       )}
 
       {/* modals */}
+
+      {/* Display Image Modal */}
+{selectedDisplayImg && (
+  <div 
+    className="fixed inset-0 z-[300] flex items-center justify-center bg-black/95 backdrop-blur-xl p-6 cursor-zoom-out" 
+    onClick={() => setSelectedDisplayImg(null)}
+  >
+    <div 
+      className="relative max-w-[90vw] w-full border-2 border-zinc-500 bg-zinc-900 shadow-2xl overflow-hidden" 
+      onClick={(e) => e.stopPropagation()}
+    >
+      <button 
+        onClick={() => setSelectedDisplayImg(null)} 
+        className="absolute top-4 right-4 text-white font-mono uppercase text-xs z-10 bg-black/50 px-2 py-1 border border-white/20 hover:bg-white hover:text-black transition-colors"
+      >
+        [ Close_X ]
+      </button>
+      
+      {/* Laptop Ratio Container */}
+      <div className="w-full h-full flex items-center justify-center bg-black">
+        <img 
+          src={selectedDisplayImg} 
+          className="w-full h-auto object-contain max-h-[85vh]" 
+          alt="Full Preview" 
+        />
+      </div>
+    </div>
+  </div>
+)}
+
       {isNeuraWorkflowOpen && (
         <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/90 backdrop-blur-md p-4 cursor-zoom-out" onClick={() => setIsNeuraWorkflowOpen(false)}>
           <div className="relative max-w-5xl w-full border-2 border-zinc-700 bg-zinc-900 p-2 shadow-2xl" onClick={(e) => e.stopPropagation()}>
@@ -579,11 +624,11 @@ const Projects = () => {
         </div>
       )}
 
-      {isArcLensWorkflowOpen && (
-        <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/90 backdrop-blur-md p-4 cursor-zoom-out" onClick={() => setIsArcLensWorkflowOpen(false)}>
+      {isDoclyticWorkflowOpen && (
+        <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/90 backdrop-blur-md p-4 cursor-zoom-out" onClick={() => setIsDoclyticWorkflowOpen(false)}>
           <div className="relative max-w-5xl w-full border-2 border-black bg-white p-2 shadow-2xl" onClick={(e) => e.stopPropagation()}>
-            <button onClick={() => setIsArcLensWorkflowOpen(false)} className="absolute -top-10 right-0 text-white font-mono uppercase text-xs">[ Close_X ]</button>
-            <div className="overflow-auto max-h-[80vh]"><img src={arclensworkflow} className="w-full grayscale hover:grayscale-0" alt="ArcLens Flow" /></div>
+            <button onClick={() => setIsDoclyticWorkflowOpen(false)} className="absolute -top-10 right-0 text-white font-mono uppercase text-xs">[ Close_X ]</button>
+            <div className="overflow-auto max-h-[80vh]"><img src={Doclyticworkflow} className="w-full grayscale hover:grayscale-0" alt="Doclytic Flow" /></div>
           </div>
         </div>
       )}
@@ -602,37 +647,3 @@ const Projects = () => {
 };
 
 export default Projects;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
