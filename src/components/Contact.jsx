@@ -127,7 +127,7 @@ const Contact = () => {
           </h2>
           
           <p className="text-zinc-500 text-sm md:text-base font-bold uppercase tracking-widest mb-10">
-            // Open for collaborations & coffee
+            // Open for collaborations
           </p>
 
           <SketchLine />
