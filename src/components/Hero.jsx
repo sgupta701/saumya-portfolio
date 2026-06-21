@@ -170,6 +170,7 @@ const Hero = () => {
             <button onClick={() => setIsSkillsOpen(true)}>SKILLS</button>
             <a href={resumePDF} download>DOWNLOAD RESUME</a>
             <a href="https://github.com/sgupta701" target="_blank" rel="noreferrer">GITHUB</a>
+            <a href="https://www.instagram.com/__gupta.saumya_?igsh=MXNiMmh3OHJmdnpxdA==" target="_blank" rel="noreferrer">INSTAGRAM</a>
           </nav>
 
           {/* main*/}
@@ -251,6 +252,7 @@ const Hero = () => {
                   <a href={resumePDF} download="Saumya_Gupta_Resume.pdf" className="hover:text-gray-700 transition-all hover:scale-110 uppercase cursor-pointer">DOWNLOAD RESUME</a>
                   <a href="https://github.com/sgupta701" target="_blank" rel="noreferrer" className="hover:text-gray-700 transition-all hover:scale-110">GITHUB</a>
                   <a href="https://www.linkedin.com/in/saumya-gupta-4385452a4/" target="_blank" rel="noreferrer" className="hover:text-gray-700 transition-all hover:scale-110">LINKEDIN</a>
+                  <a href="https://www.instagram.com/__gupta.saumya_?igsh=MXNiMmh3OHJmdnpxdA==" target="_blank" rel="noreferrer" className="hover:text-gray-700 transition-all hover:scale-110">INSTAGRAM</a>
                 </nav>
                 <div className="flex-grow flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 px-12 md:px-24 translate-y-9">
                   <div ref={summaryRef} className="w-full md:w-1/2 relative">
@@ -299,6 +301,7 @@ const Hero = () => {
                 <a href={resumePDF} download="Saumya_Gupta_Resume.pdf" className="hover:text-gray-700 uppercase">DOWNLOAD RESUME</a>
                 <a href="https://github.com/sgupta701" target="_blank" rel="noreferrer">GITHUB</a>
                 <a href="https://www.linkedin.com/in/saumya-gupta-4385452a4/" target="_blank" rel="noreferrer">LINKEDIN</a>
+                <a href="https://www.instagram.com/__gupta.saumya_?igsh=MXNiMmh3OHJmdnpxdA==" target="_blank" rel="noreferrer">INSTAGRAM</a>
               </nav>
 
               <div className="flex-grow relative overflow-hidden">

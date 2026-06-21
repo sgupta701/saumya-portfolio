@@ -1,12 +1,78 @@
-/*src/components/Contact.jsx*/
-
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const SketchLine = () => (
   <div className="w-full h-px border-b-2 border-dashed border-zinc-700/50 my-8"></div>
 );
 
+// --- CONFIGURATION ---
+// 1. Create a free Redis DB at upstash.com
+// 2. Paste your credentials here:
+const UPSTASH_REDIS_REST_URL = "YOUR_UPSTASH_REDIS_REST_URL";
+const UPSTASH_REDIS_REST_TOKEN = "YOUR_UPSTASH_REDIS_REST_TOKEN";
+const REDIS_KEY = "portfolio_likes";
+// ---------------------
+
 const Contact = () => {
+  const [likes, setLikes] = useState(null);
+  const [hasLiked, setHasLiked] = useState(false);
+  const [isIncrementing, setIsIncrementing] = useState(false);
+
+  // Fetch likes count and check local storage on mount
+  useEffect(() => {
+    const checkLikeStatus = () => {
+      const alreadyLiked = localStorage.getItem('has_liked_portfolio') === 'true';
+      setHasLiked(alreadyLiked);
+    };
+
+    const fetchCurrentLikes = async () => {
+      if (!UPSTASH_REDIS_REST_URL || UPSTASH_REDIS_REST_URL.startsWith("YOUR_")) {
+        setLikes(0);
+        return;
+      }
+      try {
+        const response = await fetch(`${UPSTASH_REDIS_REST_URL}/get/${REDIS_KEY}`, {
+          headers: { Authorization: `Bearer ${UPSTASH_REDIS_REST_TOKEN}` }
+        });
+        const data = await response.json();
+        setLikes(data.result ? parseInt(data.result, 10) : 0);
+      } catch (err) {
+        console.error("Error fetching counter:", err);
+        setLikes(0);
+      }
+    };
+
+    checkLikeStatus();
+    fetchCurrentLikes();
+  }, []);
+
+  // Handle click trigger
+  const handleLikeClick = async () => {
+    if (hasLiked || isIncrementing) return;
+
+    // Optimistically lock UI to prevent spam clicks
+    setHasLiked(true);
+    setIsIncrementing(true);
+    localStorage.setItem('has_liked_portfolio', 'true');
+
+    // Optimistic UI update
+    setLikes(prev => (prev !== null ? prev + 1 : 1));
+
+    try {
+      const response = await fetch(`${UPSTASH_REDIS_REST_URL}/incr/${REDIS_KEY}`, {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${UPSTASH_REDIS_REST_TOKEN}` }
+      });
+      const data = await response.json();
+      if (data.result) {
+        setLikes(parseInt(data.result, 10));
+      }
+    } catch (err) {
+      console.error("Error updating counter:", err);
+    } finally {
+      setIsIncrementing(false);
+    }
+  };
+
   return (
     <div className="min-h-screen w-full flex flex-col justify-center items-center bg-black text-white relative overflow-hidden font-mono selection:bg-white selection:text-black">
       <style>{`
@@ -16,6 +82,14 @@ const Contact = () => {
         }
         .animate-spin-reverse-slow {
           animation: spin-reverse-slow 20s linear infinite;
+        }
+        @keyframes pop {
+          0% { transform: scale(1); }
+          50% { transform: scale(1.2); }
+          100% { transform: scale(1); }
+        }
+        .animate-pop {
+          animation: pop 0.3s ease-out forwards;
         }
       `}</style>
 
@@ -35,7 +109,6 @@ const Contact = () => {
       <div className="absolute top-32 left-10 w-[500px] h-px border-b-2 border-dashed border-zinc-700/20 rotate-[25deg] pointer-events-none"></div>
       <div className="absolute top-10 left-40 w-px h-[400px] border-r-2 border-dashed border-zinc-700/20 rotate-[15deg] pointer-events-none"></div>
 
-   
       <div className="absolute bottom-32 right-20 w-48 h-32 border-2 border-dashed border-zinc-800/50 rotate-[-8deg] pointer-events-none opacity-40"></div>
       <div className="absolute bottom-36 right-24 w-48 h-32 border-2 border-dotted border-zinc-700/30 rotate-[-12deg] pointer-events-none opacity-40"></div>
 
@@ -46,16 +119,13 @@ const Contact = () => {
         →
       </div>
 
-      <div className="relative z-10 w-full max-w-4xl px-6">
+      <div className="relative z-10 w-full max-w-4xl px-6 py-12">
         
         <div className="relative bg-black border-2 border-dashed border-white/80 p-8 md:p-16 text-center shadow-[20px_20px_0px_0px_rgba(30,30,30,1)] rotate-[-1deg] hover:rotate-0 transition-transform duration-500">
 
           <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-32 h-8 bg-zinc-800/80 backdrop-blur-sm rotate-2 shadow-sm border border-zinc-700"></div>
 
-          <div className="inline-block border-2 border-dashed border-zinc-600 px-4 py-1 mb-8">
-             <span className="text-green-500 mr-2">●</span>
-             <span className="text-zinc-400 text-xs tracking-[0.2em] uppercase">SYSTEM STATUS: Open to Work</span>
-          </div>
+          
 
           <h2 className="text-5xl md:text-7xl font-black mb-2 leading-none uppercase tracking-tighter">
             Let's <br/> Connect
@@ -80,6 +150,34 @@ const Contact = () => {
           <p className="text-zinc-600 text-xs mt-4 mb-8">
             [ EMAIL ME ON THIS ADDRESS ]
           </p>
+
+          <SketchLine />
+
+          {/* ANONYMOUS LIKE COUNTER */}
+          <div className="my-10 flex justify-center">
+            <button
+              onClick={handleLikeClick}
+              disabled={hasLiked}
+              className={`group/btn flex items-center justify-center gap-4 border-2 border-dashed px-6 py-3 font-mono text-xs font-bold uppercase tracking-[0.2em] transition-all duration-300 select-none
+                ${hasLiked 
+                  ? 'border-zinc-800 text-zinc-500 bg-zinc-950/40 cursor-default' 
+                  : 'border-white text-white hover:bg-white hover:text-black cursor-pointer'
+                }`}
+            >
+              {/* Text / Status */}
+              <span className={isIncrementing ? 'animate-pop' : ''}>
+                {hasLiked ? 'SYSTEM APPRECIATED⚡' : 'Like this space? Drop your like👍 -> '}
+              </span>
+
+              {/* Counter Divider */}
+              <span className={`h-4 w-px border-r border-dashed ${hasLiked ? 'border-zinc-800' : 'border-zinc-700 group-hover/btn:border-black'}`}></span>
+
+              {/* Running Counter */}
+              <span className="font-black tracking-normal min-w-[1.5rem]">
+                {likes === null ? '...' : likes}
+              </span>
+            </button>
+          </div>
 
           <SketchLine />
 
