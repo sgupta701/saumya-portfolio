@@ -3,16 +3,18 @@ import React, { useState, useEffect } from 'react';
 const SketchLine = () => (
   <div className="w-full h-px border-b-2 border-dashed border-zinc-700/50 my-8"></div>
 );
-
-const UPSTASH_REDIS_REST_URL = import.meta.env.VITE_UPSTASH_REDIS_REST_URL;
-const UPSTASH_REDIS_REST_TOKEN = import.meta.env.VITE_UPSTASH_REDIS_REST_TOKEN;
-const REDIS_KEY = "portfolio_likes";
+// const UPSTASH_REDIS_REST_URL = import.meta.env.VITE_UPSTASH_REDIS_REST_URL;
+// const UPSTASH_REDIS_REST_TOKEN = import.meta.env.VITE_UPSTASH_REDIS_REST_TOKEN;
+// const REDIS_KEY = "portfolio_likes";
+// ------------------------------------
 
 const Contact = () => {
+  /* 
   const [likes, setLikes] = useState(null);
   const [hasLiked, setHasLiked] = useState(false);
   const [isIncrementing, setIsIncrementing] = useState(false);
-
+  */
+  /*
   useEffect(() => {
     const checkLikeStatus = () => {
       const alreadyLiked = localStorage.getItem('has_liked_portfolio') === 'true';
@@ -40,14 +42,15 @@ const Contact = () => {
     checkLikeStatus();
     fetchCurrentLikes();
   }, []);
+  */
 
+  /*
   const handleLikeClick = async () => {
     if (hasLiked || isIncrementing || !UPSTASH_REDIS_REST_URL) return;
 
     setHasLiked(true);
     setIsIncrementing(true);
     localStorage.setItem('has_liked_portfolio', 'true');
-
     setLikes(prev => (prev !== null ? prev + 1 : 1));
 
     try {
@@ -65,6 +68,7 @@ const Contact = () => {
       setIsIncrementing(false);
     }
   };
+  */
 
   return (
     <div className="min-h-screen w-full flex flex-col justify-center items-center bg-black text-white relative overflow-hidden font-mono selection:bg-white selection:text-black">
@@ -97,6 +101,7 @@ const Contact = () => {
       <div className="absolute bottom-10 right-10 text-zinc-600 text-6xl font-thin select-none">+</div>
       
       <div className="absolute top-1/4 left-1/4 w-64 h-64 border-2 border-dashed border-zinc-800 rounded-full opacity-30 pointer-events-none animate-spin-slow"></div>
+
       <div className="absolute bottom-1/5 right-1/4 w-96 h-96 border-4 border-dotted border-zinc-800/40 rounded-full opacity-20 pointer-events-none animate-spin-reverse-slow"></div>
       <div className="absolute top-32 left-10 w-[500px] h-px border-b-2 border-dashed border-zinc-700/20 rotate-[25deg] pointer-events-none"></div>
       <div className="absolute top-10 left-40 w-px h-[400px] border-r-2 border-dashed border-zinc-700/20 rotate-[15deg] pointer-events-none"></div>
@@ -112,6 +117,7 @@ const Contact = () => {
       </div>
 
       <div className="relative z-10 w-full max-w-4xl px-6 py-12">
+        
         <div className="relative bg-black border-2 border-dashed border-white/80 p-8 md:p-16 text-center shadow-[20px_20px_0px_0px_rgba(30,30,30,1)] rotate-[-1deg] hover:rotate-0 transition-transform duration-500">
 
           <div className="absolute -top-4 left-1/2 -translate-x-1/2 w-32 h-8 bg-zinc-800/80 backdrop-blur-sm rotate-2 shadow-sm border border-zinc-700"></div>
@@ -140,6 +146,7 @@ const Contact = () => {
             [ EMAIL ME ON THIS ADDRESS ]
           </p>
 
+          {/*
           <SketchLine />
 
           <div className="my-10 flex justify-center">
@@ -147,7 +154,7 @@ const Contact = () => {
               onClick={handleLikeClick}
               disabled={hasLiked}
               className={`group/btn flex items-center justify-center gap-4 border-2 border-dashed px-6 py-3 font-mono text-xs font-bold uppercase tracking-[0.2em] transition-all duration-300 select-none
-                ${hasLiked 
+                \${hasLiked 
                   ? 'border-zinc-800 text-zinc-500 bg-zinc-950/40 cursor-default' 
                   : 'border-white text-white hover:bg-white hover:text-black cursor-pointer'
                 }`}
@@ -155,14 +162,13 @@ const Contact = () => {
               <span className={isIncrementing ? 'animate-pop' : ''}>
                 {hasLiked ? 'SYSTEM APPRECIATED⚡' : 'Like this space? Drop your like👍 -> '}
               </span>
-
-              <span className={`h-4 w-px border-r border-dashed ${hasLiked ? 'border-zinc-800' : 'border-zinc-700 group-hover/btn:border-black'}`}></span>
-
+              <span className={`h-4 w-px border-r border-dashed \${hasLiked ? 'border-zinc-800' : 'border-zinc-700 group-hover/btn:border-black'}`}></span>
               <span className="font-black tracking-normal min-w-[1.5rem]">
                 {likes === null ? '...' : likes}
               </span>
             </button>
           </div>
+          */}
 
           <SketchLine />
 
