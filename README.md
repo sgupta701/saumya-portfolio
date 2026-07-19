@@ -1,5 +1,5 @@
 holaaa
-welcome to my portfolio.. 
+welcome to my portfolio..  
 
 It is a sketchbook-themed and responsive portfolio, Moreover, a clean-frontend was my main focus in order to demonstrate both - my projects and skills.. 
 
