@@ -90,6 +90,8 @@ const milestones = [
   { id: 'cp17', title: "Infosys Springboard, Internship", detail: "Artificial Intelligence Intern at Infosys Springboard", size: "small", x: "23%", y: "80%" },
   { id: 'y2026', year: "2026", size: "large", x: "32%", y: "80%" },
   { id: 'cp18', title: "Joined Bitgranth Organization", detail: "Full Stack Developer at Bitgranth Organization", size: "small", x: "40%", y: "80%" },
+  { id: 'cp19', title: "AIR 76: CCAT", detail: "Appeared for CDAC's C-CAT exam and secured an All India Rank of 76", size: "small", x: "46%", y: "80%" },
+  { id: 'cp20', title: "...", detail: "...", size: "small", x: "54%", y: "80%" }
 ];
 
 const projectSummary = [
@@ -280,7 +282,7 @@ const Hero = () => {
             {/* screen 2 */}
             <div className="w-screen h-full flex-col flex bg-white text-black overflow-hidden relative bg-grid-subtle">
               <Doodle src={rotatedarrow} x="2%" y="23%" rotate={10} width="110px" scale={1} />
-              <Doodle src={uparrow} x="37.8%" y="84%" rotate={25} width="70px" scale={1} />
+              <Doodle src={uparrow} x="51.8%" y="84%" rotate={25} width="70px" scale={1} />
               <Doodle src={right} x="25%" y="22.7%" rotate={25} width="40px" scale={1} />
               <Doodle src={right} x="55%" y="22.7%" rotate={25} width="40px" scale={1} />
               <Doodle src={right} x="77%" y="22.7%" rotate={25} width="40px" scale={1} />
@@ -289,6 +291,7 @@ const Hero = () => {
               <Doodle src={left} x="78%" y="51%" rotate={25} width="40px" scale={1} />
               <Doodle src={right} x="34.6%" y="79%" rotate={25} width="40px" scale={1} />
               <Doodle src={right} x="15%" y="79%" rotate={25} width="40px" scale={1} />
+              <Doodle src={right} x="48%" y="79%" rotate={25} width="40px" scale={1} />
               <Doodle src={leftarrow} x="73%" y="54%" rotate={25} width="75px" scale={1} />
               <Doodle src={down} x="89%" y="15%" rotate={25} width="48px" scale={1} />
               <Doodle src={down} x="28%" y="19%" rotate={25} width="40px" scale={1} />
@@ -306,13 +309,17 @@ const Hero = () => {
 
               <div className="flex-grow relative overflow-hidden">
                 <svg viewBox="0 0 100 100" preserveAspectRatio="none" className="absolute inset-0 w-full h-full pointer-events-none z-0">
-                  <polyline points="10,19 90,19 90,50 10,50 10,80 40,80" fill="none" stroke="#3c3838" strokeWidth="0.4" strokeDasharray="1,1" className="opacity-70" />
+                  <polyline points="12,19 90,19 90,50 10,50 10,80 54,80" fill="none" stroke="#3c3838" strokeWidth="0.4" strokeDasharray="1,1" className="opacity-70" />
                 </svg>
                 {milestones.map((m) => (
                   <div key={m.id} className="absolute group z-10" style={{ left: m.x, top: m.y, transform: 'translate(-50%, -50%)' }}>
                     <div className="absolute bottom-[120%] left-1/2 -translate-x-1/2 flex flex-col items-center">
                       {m.year && <span className="text-base font-black italic mb-1">{m.year}</span>}
-                      {m.title && <span className="text-[11px] font-bold text-black text-center max-w-[100px]">{m.title}</span>}
+                      {m.title && (
+                        <span className="text-[11px] font-bold text-black text-center whitespace-pre-line leading-tight">
+                          {m.title}
+                        </span>
+                      )}
                     </div>
                     <div className={`${m.size === 'large' ? 'w-10 h-10 bg-black' : 'w-7 h-7 bg-gray-400'} rounded-full border-4 border-white shadow-[0_0_0_2px_black]`}></div>
                     <div className="absolute top-12 left-1/2 -translate-x-1/2 w-52 bg-white border-2 border-black p-4 opacity-0 pointer-events-none group-hover:opacity-100 transition-all shadow-[10px_10px_0px_0px_rgba(0,0,0,1)] z-[110]">

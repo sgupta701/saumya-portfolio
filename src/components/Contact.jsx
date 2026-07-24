@@ -177,7 +177,7 @@ const Contact = () => {
               { name: 'GITHUB', link: 'https://github.com/sgupta701' },
               { name: 'LINKEDIN', link: 'https://www.linkedin.com/in/saumya-gupta-4385452a4/' },
               { name: 'INSTAGRAM', link: 'https://www.instagram.com/__gupta.saumya_?igsh=MXNiMmh3OHJmdnpxdA==' },
-              { name: 'RESUME', link: 'https://drive.google.com/file/d/1M2K1imOWHLQaUb5mbmWh21jENh5wBtL2/view?usp=sharing' }
+              { name: 'RESUME', link: 'https://drive.google.com/file/d/19mWtx4qP_AbO52RBPcxB_FZkT7RNEg8r/view?usp=drive_link' }
             ].map((social) => (
               <a 
                 key={social.name} 
