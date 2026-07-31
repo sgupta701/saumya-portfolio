@@ -548,7 +548,7 @@ const Projects = () => {
                     <h3 className="text-6xl md:text-8xl font-black tracking-tighter">VertaAI</h3>
                   </div>
                   <div className="text-right hidden md:block font-mono text-zinc-500 text-xs tracking-widest">
-                    <p>STATUS: [COMPLETED]</p><p>YEAR: 2025</p>
+                    <p>STATUS: [COMPLETED & DEPLOYED]</p><p>YEAR: 2025</p>
                   </div>
                 </div>
                 <div className="flex flex-col md:flex-row gap-12 items-start">
@@ -573,6 +573,7 @@ const Projects = () => {
                         <img src={displayvertaai} className="w-full" alt="preview" />
                       </div>
                     </div>
+                    <a href="https://verta-ai.vercel.app/" target="_blank" rel="noreferrer" className="text-zinc-600 border-b-2 border-zinc-200 uppercase text-xl font-bold tracking-widest">[ LIVE LINK ]</a>
                     <a href="https://github.com/sgupta701/Verta-AI" target="_blank" rel="noreferrer" className="text-zinc-400 border-b-2 border-zinc-700 uppercase text-xl font-bold tracking-widest hover:text-white">[ GITHUB ]</a>
                   </div>
                 </div>
