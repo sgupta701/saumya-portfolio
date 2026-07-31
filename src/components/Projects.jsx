@@ -413,7 +413,7 @@ const Projects = () => {
                     <h3 className="text-6xl md:text-8xl font-black tracking-tighter">swytch.sh</h3>
                   </div>
                   <div className="text-right hidden md:block font-mono text-zinc-500 text-xs tracking-widest">
-                    <p>STATUS: [COMPLETED]</p><p>YEAR: 2026</p>
+                    <p>STATUS: [COMPLETED & DEPLOYED]</p><p>YEAR: 2026</p>
                   </div>
                 </div>
                 <div className="flex flex-col md:flex-row gap-12 items-start">

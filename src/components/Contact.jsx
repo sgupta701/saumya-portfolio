@@ -9,66 +9,6 @@ const SketchLine = () => (
 // ------------------------------------
 
 const Contact = () => {
-  /* 
-  const [likes, setLikes] = useState(null);
-  const [hasLiked, setHasLiked] = useState(false);
-  const [isIncrementing, setIsIncrementing] = useState(false);
-  */
-  /*
-  useEffect(() => {
-    const checkLikeStatus = () => {
-      const alreadyLiked = localStorage.getItem('has_liked_portfolio') === 'true';
-      setHasLiked(alreadyLiked);
-    };
-
-    const fetchCurrentLikes = async () => {
-      if (!UPSTASH_REDIS_REST_URL) {
-        console.warn("Upstash environmental variables are missing.");
-        setLikes(0);
-        return;
-      }
-      try {
-        const response = await fetch(`${UPSTASH_REDIS_REST_URL}/get/${REDIS_KEY}`, {
-          headers: { Authorization: `Bearer ${UPSTASH_REDIS_REST_TOKEN}` }
-        });
-        const data = await response.json();
-        setLikes(data.result ? parseInt(data.result, 10) : 0);
-      } catch (err) {
-        console.error("Error fetching counter:", err);
-        setLikes(0);
-      }
-    };
-
-    checkLikeStatus();
-    fetchCurrentLikes();
-  }, []);
-  */
-
-  /*
-  const handleLikeClick = async () => {
-    if (hasLiked || isIncrementing || !UPSTASH_REDIS_REST_URL) return;
-
-    setHasLiked(true);
-    setIsIncrementing(true);
-    localStorage.setItem('has_liked_portfolio', 'true');
-    setLikes(prev => (prev !== null ? prev + 1 : 1));
-
-    try {
-      const response = await fetch(`${UPSTASH_REDIS_REST_URL}/incr/${REDIS_KEY}`, {
-        method: 'POST',
-        headers: { Authorization: `Bearer ${UPSTASH_REDIS_REST_TOKEN}` }
-      });
-      const data = await response.json();
-      if (data.result) {
-        setLikes(parseInt(data.result, 10));
-      }
-    } catch (err) {
-      console.error("Error updating counter:", err);
-    } finally {
-      setIsIncrementing(false);
-    }
-  };
-  */
 
   return (
     <div className="min-h-screen w-full flex flex-col justify-center items-center bg-black text-white relative overflow-hidden font-mono selection:bg-white selection:text-black">
@@ -125,17 +65,27 @@ const Contact = () => {
           <h2 className="text-5xl md:text-7xl font-black mb-2 leading-none uppercase tracking-tighter">
             Let's <br/> Connect
           </h2>
-          
-          <p className="text-zinc-500 text-sm md:text-base font-bold uppercase tracking-widest mb-10">
-            // Open for collaborations
-          </p>
-
+          <SketchLine />
+          <div className="my-6">
+            <p className="text-zinc-200 text-sm md:text-base uppercase tracking-widest font-semibold mb-2">
+              Liked my portfolio? Leave a star on GitHub!
+            </p>
+            <a 
+              href="https://github.com/sgupta701/saumya-portfolio" 
+              target="_blank" 
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 border border-dashed border-zinc-500 px-4 py-2 text-xs md:text-sm text-zinc-300 hover:text-black hover:bg-white hover:border-white transition-all uppercase tracking-wider group"
+            >
+              <span>★ Star the Repo</span>
+              <span className="inline-block group-hover:-translate-y-0.5 group-hover:translate-x-0.5 transition-transform">↗</span>
+            </a>
+          </div>
           <SketchLine />
 
           <div className="group relative inline-block my-4">
             <a 
               href="mailto:gupta.sg003@gmail.com"
-              className="relative z-10 block text-2xl md:text-4xl font-bold bg-white text-black px-6 py-4 border-2 border-black hover:bg-zinc-200 transition-colors uppercase tracking-tight"
+              className="relative z-10 block text-xl md:text-2xl font-bold bg-white text-black px-6 py-4 border-2 border-black hover:bg-zinc-200 transition-colors uppercase tracking-tight"
             >
               gupta.sg003@gmail.com
             </a>
@@ -145,30 +95,6 @@ const Contact = () => {
           <p className="text-zinc-600 text-xs mt-4 mb-8">
             [ EMAIL ME ON THIS ADDRESS ]
           </p>
-
-          {/*
-          <SketchLine />
-
-          <div className="my-10 flex justify-center">
-            <button
-              onClick={handleLikeClick}
-              disabled={hasLiked}
-              className={`group/btn flex items-center justify-center gap-4 border-2 border-dashed px-6 py-3 font-mono text-xs font-bold uppercase tracking-[0.2em] transition-all duration-300 select-none
-                \${hasLiked 
-                  ? 'border-zinc-800 text-zinc-500 bg-zinc-950/40 cursor-default' 
-                  : 'border-white text-white hover:bg-white hover:text-black cursor-pointer'
-                }`}
-            >
-              <span className={isIncrementing ? 'animate-pop' : ''}>
-                {hasLiked ? 'SYSTEM APPRECIATED⚡' : 'Like this space? Drop your like👍 -> '}
-              </span>
-              <span className={`h-4 w-px border-r border-dashed \${hasLiked ? 'border-zinc-800' : 'border-zinc-700 group-hover/btn:border-black'}`}></span>
-              <span className="font-black tracking-normal min-w-[1.5rem]">
-                {likes === null ? '...' : likes}
-              </span>
-            </button>
-          </div>
-          */}
 
           <SketchLine />
 
